@@ -1,9 +1,11 @@
 # Quality Assurance Demands Quality!
 
-## Summary 
-- It can be very expensive to license out software to expedite the management system within a business. With Quality Assurance, this is abundantly true. This application, will allow the business to streamline the process, all the while saving the company a substantial amount of money. 
+## Summary
+
+- It can be very expensive to license out software to expedite the management system within a business. With Quality Assurance, this is abundantly true. This application, will allow the business to streamline the process, all the while saving the company a substantial amount of money.
 
 ## User Story
+
 - AS A QA Supervisor,
 - I WANT to assign Customer Care Representative (CRSs) agents and Escalated Unit (EUs) agents to Quality Assurance (QA) staff in a table format so that QA can see -who they must audit.
 - AS A QA Supervisor,
@@ -18,6 +20,7 @@
 - I WANT the ability to export the QA assignments to an Excel spreadsheet so that I can share this report with the departments that don’t have access to the FiMI application such as the workforce department who need to be aware of assignments for scheduling.
 
 ## Requirements
+
 - GIVEN a data entry and employee roster management site
 - WHEN I visit the site as a QA employee for the first time
 - THEN I am presented with the homepage, navigation links for the homepage, and the option to log in or sign up.
@@ -39,21 +42,23 @@
 - WHEN I as a QA Supervisor or agent click on “signout” I am logged out of the application and taken back to the login page.
 
 ### Wireframe
+
 - <img width="1024" alt="Screen Shot 2022-02-08 at 8 01 47 PM" src="https://user-images.githubusercontent.com/92201576/153107725-41f362da-b415-4a70-b895-23d1b2a18e42.png">
 
 - <img width="1024" alt="Screen Shot 2022-02-08 at 8 02 42 PM" src="https://user-images.githubusercontent.com/92201576/153107878-83515ddd-cf2a-40a8-9d4c-cb66d7c9e146.png">
 
--- <img width="1027" alt="Screen Shot 2022-02-08 at 7 58 59 PM" src="https://user-images.githubusercontent.com/92201576/153107475-2a8d0753-16ba-4bad-be9f-f698ffc5c914.png">
+-<img width="1027" alt="Screen Shot 2022-02-08 at 7 58 59 PM" src="https://user-images.githubusercontent.com/92201576/153107475-2a8d0753-16ba-4bad-be9f-f698ffc5c914.png">
 
 - <img width="1027" alt="Screen Shot 2022-02-08 at 8 04 40 PM" src="https://user-images.githubusercontent.com/92201576/153108001-ceaf059d-65ec-43b9-a40a-0fa142b79fc1.png">
 
 - <img width="1023" alt="Screen Shot 2022-02-08 at 8 04 53 PM" src="https://user-images.githubusercontent.com/92201576/153108032-732f1dbb-c8fd-40f5-8e88-da22d6b92bef.png">
 
-
 ## Link to Heroku Deployed Application
+
 - lorem
 
 ### Technoligies Used
+
 - JavaScript
 - Node.js
 - NPM
@@ -63,8 +68,7 @@
 - MySql
 
 ### Contributors
-- Faissal 
-- Michelle 
-- Micheal 
 
-
+- Faissal
+- Michelle
+- Micheal
