@@ -1,0 +1,107 @@
+:root {
+    font-size: 20px;
+    --text-color: black;
+    --bg-main: #09f66c;
+    --bg-alt: #07d35d;
+}
+
+body {
+    color: black;
+    font-weight: 700;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--bg-main);
+    transition: width 600ms ease;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+/* Makes sure this will keep the back button at the very bottom at all times */
+#backButton {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-main);
+    filter: grayscale(100%) opacity(0.7);
+    transition: 300ms ease-in;
+    width: 16rem;
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-alt);
+    overflow-x: hd;
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link svg {
+    width: 2rem;
+    margin: 0 1.5rem;
+}
+
+/* UNDER 1024 WIDTH. FIXES WIDTH ERROR */
+@media (max-width: 1024px) {
+    .nav-item {
+        width: 100%;
+    }
+}
+
+/* 600 WIDTH AND ABOVE */
+@media (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+    }
+}
+
+/* UNDER 600 WIDTH */
+@media (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-list{
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+        width: 6rem;
+    }
+}
