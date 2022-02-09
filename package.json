@@ -1,0 +1,26 @@
+{
+  "name": "fimi-qa_application",
+  "version": "1.0.0",
+  "description": "## Summary",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiryeah/FiMi-QA_Application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiryeah/FiMi-QA_Application/issues"
+  },
+  "homepage": "https://github.com/Jiryeah/FiMi-QA_Application#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.16.0"
+  }
+}
