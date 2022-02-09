@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS fimi_db;
+
+CREATE DATABASE fimi_db;
