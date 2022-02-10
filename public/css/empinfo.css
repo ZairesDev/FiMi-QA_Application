@@ -3,10 +3,6 @@
     background: #fff;
 }
 
-body {
-    background: #d9fff9;
-}
-
 .emp-button {
     margin: 0 50px;
 }
@@ -28,12 +24,10 @@ body {
         width: 220px;
     }
 }
-
 @media (max-width: 1148px) {
     label {
         font-size: 18px;
     }
-
     .emp-input {
         width: 200px !important;
     }
@@ -59,15 +53,15 @@ body {
     label {
         font-size: 12px;
     }
-
+    
     .emp-button {
         margin: 10px;
         height: 50px;
         width: 80px;
         font-size: 10px;
     }
-
+    
     button {
         font-size: 10px;
     }
-}
+}   

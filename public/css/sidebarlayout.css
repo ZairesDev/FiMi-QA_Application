@@ -5,7 +5,12 @@
     --bg-alt: #00b79c;
 }
 
+main {
+    height: 100vh;
+}
+
 body {
+    background: #e3f5f2;
     color: black;
     font-weight: 700;
 }
@@ -38,7 +43,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
 }
 
 /* Makes sure this will keep the back button at the very bottom at all times */
