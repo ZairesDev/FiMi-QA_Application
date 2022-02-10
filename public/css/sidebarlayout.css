@@ -11,7 +11,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 0.25rem;
+    width: 0.5rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -51,13 +51,14 @@ main {
     align-items: center;
     height: 5rem;
     color: var(--text-main);
-    filter: grayscale(100%) opacity(0.7);
+    filter: grayscale(100%);
     transition: 300ms ease-in;
-    width: 16rem;
+    width: 15rem;
 }
 
 .nav-link:hover {
-    filter: grayscale(0%) opacity(1);
+    color: #fff;
+    filter: grayscale(0%);
     background: var(--bg-alt);
 }
 
@@ -72,8 +73,8 @@ main {
 }
 
 /* UNDER 1024 WIDTH. FIXES WIDTH ERROR */
-@media (max-width: 1024px) {
-    .nav-item {
+@media (max-width: 1023px) {
+    .nav-link {
         width: 100%;
     }
 }
@@ -87,7 +88,7 @@ main {
     }
 
     .navbar:hover {
-        width: 16rem;
+        width: 15rem;
     }
 
     .navbar:hover .link-text {

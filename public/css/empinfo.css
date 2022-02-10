@@ -22,22 +22,18 @@ body {
         margin: 25px 100px;
     }
 }
-@media (max-width: 1425px) {
-    input {
-        width: 150px !important;
+
+@media (max-width: 1288px) {
+    .emp-input {
+        width: 220px;
     }
 }
 
-@media (max-width: 1288px) {
-    main {
-        margin-left: 0;
-        width: 100%;
-    }
-}
 @media (max-width: 1148px) {
     label {
         font-size: 18px;
     }
+
     .emp-input {
         width: 200px !important;
     }
@@ -58,20 +54,19 @@ body {
     }
 }
 
-
 @media (max-width: 642px) {
 
     label {
         font-size: 12px;
     }
-    
+
     .emp-button {
         margin: 10px;
         height: 50px;
         width: 80px;
         font-size: 10px;
     }
-    
+
     button {
         font-size: 10px;
     }
