@@ -1,13 +1,25 @@
 :root {
     font-size: 20px;
     --text-color: black;
-    --bg-main: #09f66c;
-    --bg-alt: #07d35d;
+    --bg-main: #00d1b2;
+    --bg-alt: #00b79c;
 }
 
 body {
     color: black;
     font-weight: 700;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--bg-main);
 }
 
 main {
@@ -47,7 +59,6 @@ main {
 .nav-link:hover {
     filter: grayscale(0%) opacity(1);
     background: var(--bg-alt);
-    overflow-x: hd;
 }
 
 .link-text {
@@ -84,24 +95,35 @@ main {
     }
 }
 
+
 /* UNDER 600 WIDTH */
 @media (max-width: 600px) {
+
+    main {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    body {
+        margin-bottom: 100px;
+    }
+
     .navbar {
         bottom: 0;
         width: 100vw;
         height: 5rem;
     }
 
-    .logo {
-        display: none;
-    }
-
-    .navbar-list{
+    .navbar-list {
         flex-direction: row;
     }
 
     .nav-link {
         justify-content: center;
         width: 6rem;
+    }
+
+    .emp-panel {
+        width: 100% !important;
     }
 }

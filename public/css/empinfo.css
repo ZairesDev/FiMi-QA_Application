@@ -1,0 +1,78 @@
+.emp-panel {
+    width: 70%;
+    background: #fff;
+}
+
+body {
+    background: #d9fff9;
+}
+
+.emp-button {
+    margin: 0 50px;
+}
+
+/* FORM RELATED */
+@media (max-width: 1729px) {
+    .emp-input {
+        padding: 10px !important;
+    }
+
+    .emp-button {
+        width: 200px;
+        margin: 25px 100px;
+    }
+}
+@media (max-width: 1425px) {
+    input {
+        width: 150px !important;
+    }
+}
+
+@media (max-width: 1288px) {
+    main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+@media (max-width: 1148px) {
+    label {
+        font-size: 18px;
+    }
+    .emp-input {
+        width: 200px !important;
+    }
+}
+
+@media (max-width: 857px) {
+    .emp-input {
+        width: 150px !important;
+    }
+
+    .emp-button {
+        width: 100px;
+        margin: 0 40px !important;
+    }
+
+    label {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 642px) {
+
+    label {
+        font-size: 12px;
+    }
+    
+    .emp-button {
+        margin: 10px;
+        height: 50px;
+        width: 80px;
+        font-size: 10px;
+    }
+    
+    button {
+        font-size: 10px;
+    }
+}
