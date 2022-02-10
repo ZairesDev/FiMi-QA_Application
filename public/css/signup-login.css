@@ -1,4 +1,3 @@
-
 .sign-up {
     background: #fff;
 }
@@ -14,9 +13,11 @@
     align-items: center;
     text-align: center;
 }
+
 label {
     margin-bottom: 20px;
 }
+
 input {
     display: flex;
     justify-content: center;
@@ -24,5 +25,7 @@ input {
 }
 
 .outlier-radio {
-    position: relative; bottom: .4rem; left: -5%;
+    position: relative;
+    bottom: .4rem;
+    left: -5%;
 }

@@ -7,12 +7,32 @@
     margin: 0 50px;
 }
 
+tr:hover {
+    background: #D6D1F0 !important;
+}
+
+tr:nth-child(even) {
+    background-color: #BBB3E5;
+}
+
+.table-one-button {
+    position: relative;
+    left: 47.5%;
+    bottom: 20px;
+}
+
+.table-two-button {
+    position: relative;
+    left: 40%;
+}
+
+
 /* FORM RELATED */
+
 @media (max-width: 1729px) {
     .emp-input {
         padding: 10px !important;
     }
-
     .emp-button {
         width: 200px;
         margin: 25px 100px;
@@ -24,6 +44,7 @@
         width: 220px;
     }
 }
+
 @media (max-width: 1148px) {
     label {
         font-size: 18px;
@@ -37,31 +58,26 @@
     .emp-input {
         width: 150px !important;
     }
-
     .emp-button {
         width: 100px;
         margin: 0 40px !important;
     }
-
     label {
         font-size: 15px;
     }
 }
 
 @media (max-width: 642px) {
-
     label {
         font-size: 12px;
     }
-    
     .emp-button {
         margin: 10px;
         height: 50px;
         width: 80px;
         font-size: 10px;
     }
-    
     button {
         font-size: 10px;
     }
-}   
+}

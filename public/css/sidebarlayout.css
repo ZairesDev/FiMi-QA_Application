@@ -5,16 +5,6 @@
     --bg-alt: #00b79c;
 }
 
-main {
-    height: 100vh;
-}
-
-body {
-    background: #e3f5f2;
-    color: black;
-    font-weight: 700;
-}
-
 body::-webkit-scrollbar {
     width: 0.5rem;
 }
@@ -29,10 +19,24 @@ body::-webkit-scrollbar-thumb {
 
 main {
     margin-left: 5rem;
-    padding: 1rem;
+    background: #F5F0F6;
 }
 
+.title,
+.subtitle {
+    color: #fff;
+    background: #8377D1;
+    width: 100%;
+    text-align: center;
+    border: 5px solid#8377D1;
+}
+
+
+/* NAV SIDEBAR RELATED */
+
 .navbar {
+    color: black;
+    font-weight: 700;
     position: fixed;
     background-color: var(--bg-main);
     transition: width 600ms ease;
@@ -45,7 +49,9 @@ main {
     align-items: center;
 }
 
+
 /* Makes sure this will keep the back button at the very bottom at all times */
+
 #backButton {
     margin-top: auto;
 }
@@ -55,14 +61,12 @@ main {
     align-items: center;
     height: 5rem;
     color: var(--text-main);
-    filter: grayscale(100%);
     transition: 300ms ease-in;
     width: 15rem;
 }
 
 .nav-link:hover {
     color: #fff;
-    filter: grayscale(0%);
     background: var(--bg-alt);
 }
 
@@ -76,25 +80,27 @@ main {
     margin: 0 1.5rem;
 }
 
+
 /* UNDER 1024 WIDTH. FIXES WIDTH ERROR */
+
 @media (max-width: 1023px) {
     .nav-link {
         width: 100%;
     }
 }
 
+
 /* 600 WIDTH AND ABOVE */
+
 @media (min-width: 600px) {
     .navbar {
         top: 0;
         width: 5rem;
         height: 100vh;
     }
-
     .navbar:hover {
         width: 15rem;
     }
-
     .navbar:hover .link-text {
         display: inline;
     }
@@ -102,32 +108,27 @@ main {
 
 
 /* UNDER 600 WIDTH */
-@media (max-width: 600px) {
 
+@media (max-width: 600px) {
     main {
         margin-left: 0;
         padding: 0;
     }
-
     body {
         margin-bottom: 100px;
     }
-
     .navbar {
         bottom: 0;
         width: 100vw;
         height: 5rem;
     }
-
     .navbar-list {
         flex-direction: row;
     }
-
     .nav-link {
         justify-content: center;
         width: 6rem;
     }
-
     .emp-panel {
         width: 100% !important;
     }
