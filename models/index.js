@@ -1,25 +1,15 @@
-import QaSuper from `./QaSupervisor`;
-import QaAgent from `./QaAgent`;
-import EscaUnitSuper from `./EscaUnitSuper`
-import EscaUnit from `./EscaUnit`;
-import CsrSuper from `./CsrSuper`;
-import Csr from `./Csr`;
+const QaSuper = require(`./QaSuper`);
+const QaAgent = require(`./QaAgent`);
+const EuSuper = require(`./EscalationUnitSuper`);
+const Escalation_Unit = require(`./EscalationUnit`);
+const CallRepSuper = require(`./CallSpecialistSuper`);
+const CallRep = require(`./CallSpecialist`);
 
-
-
-
-
-
-
-
-
-
-
-export {
+module.exports = {
   QaSuper,
   QaAgent,
-  EscaUnitSuper,
-  EscaUnit,
-  CsrSuper,
-  Csr
-}
+  EuSuper,
+  Escalation_Unit,
+  CallRepSuper,
+  CallRep,
+};
