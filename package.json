@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Jiryeah/FiMi-QA_Application#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bulma": "^0.9.3",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
     "nodemailer": "^6.7.2",
