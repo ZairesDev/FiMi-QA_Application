@@ -40,7 +40,7 @@ QaSuper.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    CallSpecialist_Count: {
+    call_specialist_Count: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
