@@ -57,7 +57,7 @@
 
 - lorem
 
-### Technoligies Used
+### Technologies Used
 
 - JavaScript
 - Node.js
@@ -66,6 +66,8 @@
 - Socket.io
 - Sequelize
 - MySql
+- Bcrypt
+- Bulma
 
 ### Contributors
 
