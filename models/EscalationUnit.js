@@ -34,22 +34,7 @@ EscalationUnit.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    site: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    supervisor_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: `EscalationUnitSuper`,
-        key: `id`,
-      },
-    },
     role: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -60,6 +45,13 @@ EscalationUnit.init(
     group: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    supervisor_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: `EscalationUnitSuper`,
+        key: `id`,
+      },
     },
     qa_agent: {
       type: DataTypes.STRING,

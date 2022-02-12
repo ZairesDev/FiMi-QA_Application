@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require(`sequelize`);
 const sequelize = require(`../config/connection`);
 
-class EscalationUnitSuper extends Model {}
+class CallSpecialistSuper extends Model {}
 
-EscalationUnitSuper.init(
+CallSpecialistSuper.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -20,14 +20,6 @@ EscalationUnitSuper.init(
       allowNull: false,
     },
     site: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    site: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -61,8 +53,8 @@ EscalationUnitSuper.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `csr`,
+    modelName: `CallSpecialistSuper`,
   }
 );
 
-module.exports = EscalationUnitSuper;
+module.exports = CallSpecialistSuper;

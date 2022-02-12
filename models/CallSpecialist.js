@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require(`sequelize`);
 const sequelize = require(`../config/connection`);
 
-class Csr extends Model {}
+class CallSpecialist extends Model {}
 
-Csr.init(
+CallSpecialist.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -34,29 +34,7 @@ Csr.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    site: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    supervisor_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: `CallSpecialistSuper`,
-        key: `id`,
-      },
-    },
-    qa_agent_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: `QaAgent`,
-        key: `id`,
-      },
-    },
     role: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -67,6 +45,13 @@ Csr.init(
     group: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    supervisor_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: `CallSpecialistSuper`,
+        key: `id`,
+      },
     },
     qa_agent: {
       type: DataTypes.STRING,
@@ -90,8 +75,8 @@ Csr.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `csr`,
+    modelName: `CallSpecialist`,
   }
 );
 
-module.exports = Csr;
+module.exports = CallSpecialist;
