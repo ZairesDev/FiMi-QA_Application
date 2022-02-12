@@ -7,21 +7,19 @@ const CallRep = require(`./CallSpecialist`);
 const EscalationUnitSuper = require("./EscalationUnitSuper");
 const CallSpecialist = require("./CallSpecialist");
 
-// TODO: figure out if one CSR Super has many CSR's under them, or only one
-CallRep.belongsToMany(CallRepSuper, {
+CallRep.belongsTo(CallRepSuper, {
   foreignKey: `id`,
 });
 
 CallRep.belongsTo(QaAgent, {
-  // might need to change this to qa_agent_id
   foreignKey: `id`,
 });
 
-CallRep.belongsTo(QaSuper, {
-  foreignKey: `id`,
-});
+// WE CAN REMOVE THIS CallRep.belongsTo(QaSuper, {
+//   foreignKey: `id`,
+// });
 
-Escalation_Unit.belongsToMany(EscalationUnitSuper, {
+Escalation_Unit.belongsTo(EscalationUnitSuper, {
   foreignKey: `id`,
 });
 
@@ -29,21 +27,21 @@ Escalation_Unit.belongsTo(QaAgent, {
   foreignKey: `id`,
 });
 
-Escalation_Unit.belongsTo(QaSuper, {
-  foreignKey: `id`,
-});
+// WE CAN REMOVE THIS Escalation_Unit.belongsTo(QaSuper, {
+//   foreignKey: `id`,
+// });
 
-CallRepSuper.hasMany(CallRep, {
-  foreignKey: `id`,
-});
+// CallRepSuper.hasMany(CallRep, {
+//   foreignKey: `id`,
+// });
 
-CallRepSuper.belongsToMany(QaAgent, {
-  foreignKey: `id`,
-});
+// CallRepSuper.belongsToMany(QaAgent, {
+//   foreignKey: `id`,
+// });
 
-CallRepSuper.belongsToMany(QaSuper, {
-  foreignKey: `id`,
-});
+// CallRepSuper.belongsToMany(QaSuper, {
+//   foreignKey: `id`,
+// });
 
 // QaAgent.hasMany(CallRep, {
 //   through: CallSpecialist,
@@ -62,7 +60,7 @@ CallRepSuper.belongsToMany(QaSuper, {
 //   foreignKey: `id`,
 // });
 
-CallRepSuper.module.exports = {
+module.exports = {
   QaSuper,
   QaAgent,
   EuSuper,

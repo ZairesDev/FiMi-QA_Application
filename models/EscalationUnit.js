@@ -54,7 +54,7 @@ EscalationUnit.init(
       },
     },
     qa_agent: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: `QaAgent`,
@@ -62,7 +62,7 @@ EscalationUnit.init(
       },
     },
     qa_supervisor: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: `QaSuper`,

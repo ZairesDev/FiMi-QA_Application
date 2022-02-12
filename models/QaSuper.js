@@ -25,11 +25,11 @@ QaSuper.init(
       allowNull: false,
     },
     qa_agent: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: `QaAgent`,
-        key: `first_name last_name`,
+        key: `id`,
       },
     },
     language: {

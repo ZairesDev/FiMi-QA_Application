@@ -32,21 +32,21 @@ CallSpecialistSuper.init(
       allowNull: false,
     },
     qa_agent: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: `QaAgent`,
         key: `id`,
       },
     },
-    qa_supervisor: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: `QaSuper`,
-        key: `id`,
-      },
-    },
+    // qa_supervisor: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: `QaSuper`,
+    //     key: `id`,
+    //   },
+    // },
   },
   {
     sequelize,
