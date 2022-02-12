@@ -27,13 +27,6 @@ EscalationUnitSuper.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    qa_agent_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: `QaAgent`,
-        key: `id`,
-      },
-    },
     location: {
       type: DataTypes.STRING,
       allowNull: false,

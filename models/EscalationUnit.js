@@ -45,13 +45,6 @@ EscalationUnit.init(
         key: `id`,
       },
     },
-    qa_agent_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: `QaAgent`,
-        key: `id`,
-      },
-    },
     role: {
       type: DataTypes.STRING,
       allowNull: false,
