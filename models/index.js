@@ -1,56 +1,41 @@
 const QaSuper = require(`./QaSuper`);
 const QaAgent = require(`./QaAgent`);
 const EuSuper = require(`./EscalationUnitSuper`);
-const Escalation_Unit = require(`./EscalationUnit`);
 const CallRepSuper = require(`./CallSpecialistSuper`);
-const CallRep = require(`./CallSpecialist`);
-const EscalationUnitSuper = require("./EscalationUnitSuper");
-const CallSpecialist = require("./CallSpecialist");
+const Employee = require("./Employee");
 
-CallRep.belongsTo(CallRepSuper, {
+Employee.belongsTo(CallRepSuper, {
   foreignKey: `id`,
 });
 
-CallRep.belongsTo(QaAgent, {
+Employee.belongsTo(EuSuper, {
   foreignKey: `id`,
 });
 
-// WE CAN REMOVE THIS CallRep.belongsTo(QaSuper, {
-//   foreignKey: `id`,
-// });
-
-Escalation_Unit.belongsTo(EscalationUnitSuper, {
+Employee.belongsTo(QaAgent, {
   foreignKey: `id`,
 });
 
-Escalation_Unit.belongsTo(QaAgent, {
-  foreignKey: `id`,
-});
-
-// WE CAN REMOVE THIS Escalation_Unit.belongsTo(QaSuper, {
+// EmployeeSuper.hasMany(Employee, {
 //   foreignKey: `id`,
 // });
 
-// CallRepSuper.hasMany(CallRep, {
+// EmployeeSuper.belongsToMany(QaAgent, {
 //   foreignKey: `id`,
 // });
 
-// CallRepSuper.belongsToMany(QaAgent, {
+// EmployeeSuper.belongsToMany(QaSuper, {
 //   foreignKey: `id`,
 // });
 
-// CallRepSuper.belongsToMany(QaSuper, {
-//   foreignKey: `id`,
-// });
-
-// QaAgent.hasMany(CallRep, {
-//   through: CallSpecialist,
+// QaAgent.hasMany(Employee, {
+//   through: Employee,
 //   as: `CSR counts`,
 //   foreignKey: `id`,
 // });
 
-// QaAgent.hasMany(CallRepSuper, {
-//   through: CallRep,
+// QaAgent.hasMany(EmployeeSuper, {
+//   through: Employee,
 //   as: `CSR counts`,
 //   foreignKey: `id`,
 // });
@@ -64,7 +49,6 @@ module.exports = {
   QaSuper,
   QaAgent,
   EuSuper,
-  Escalation_Unit,
   CallRepSuper,
-  CallRep,
+  Employee,
 };

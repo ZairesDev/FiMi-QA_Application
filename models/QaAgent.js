@@ -51,6 +51,15 @@ QaAgent.init(
         key: `id`,
       },
     },
+    call_specialist_count: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: `CallSpecialist`,
+        // TODO: figure out how to give/show total number of call specialists under his/her current review
+        key: `id`,
+      },
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -73,6 +82,24 @@ QaAgent.init(
     },
   },
   {
+    hooks: {
+      // set up beforeCreate lifecycle 'hook' functionality
+      async beforeCreate(newQaSuperData) {
+        newQaSuperData.password = await bcrypt.hash(
+          newQaSuperData.password,
+          10
+        );
+        return newQaSuperData;
+      },
+      // set up beforeUpdate lifecycle 'hook' functionality
+      async beforeUpdate(updatedQaSuperData) {
+        updatedQaSuperData.password = await bcrypt.hash(
+          updatedQaSuperData.password,
+          10
+        );
+        return updatedQaSuperData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

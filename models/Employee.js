@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require(`sequelize`);
 const sequelize = require(`../config/connection`);
 
-class CallSpecialist extends Model {}
+class Employee extends Model {}
 
-CallSpecialist.init(
+Employee.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -46,10 +46,17 @@ CallSpecialist.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    supervisor_id: {
+    csr_supervisor_id: {
       type: DataTypes.INTEGER,
       references: {
         model: `CallSpecialistSuper`,
+        key: `id`,
+      },
+    },
+    escalation_supervisor_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: `EscalationUnitSuper`,
         key: `id`,
       },
     },
@@ -61,15 +68,6 @@ CallSpecialist.init(
         key: `id`,
       },
     },
-    //WE CAN REMOVE THIS
-    // qa_supervisor: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: `QaSuper`,
-    //     key: `id`,
-    //   },
-    // },
   },
   {
     sequelize,
@@ -80,4 +78,4 @@ CallSpecialist.init(
   }
 );
 
-module.exports = CallSpecialist;
+module.exports = Employee;

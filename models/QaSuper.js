@@ -40,17 +40,6 @@ QaSuper.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    ///THIS SHOULD GO UNDER QA AGENT///
-    // call_specialist_Count: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: `CallSpecialist`,
-    //     // TODO: figure out how to give/show total number of call specialists under his/her current review
-    //     key: `id`,
-    //   },
-    // },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
