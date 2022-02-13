@@ -24,10 +24,17 @@ Post.init(
         isURL: true,
       },
     },
-    user_id: {
+    agent_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: `user`,
+        model: `QaAgent`,
+        key: `id`,
+      },
+    },
+    supervisor_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: `QaSuper`,
         key: `id`,
       },
     },
