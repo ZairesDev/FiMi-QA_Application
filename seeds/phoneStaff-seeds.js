@@ -2,6 +2,7 @@ const { CallRep } = require("../models");
 
 const CallSpecialistData = [
   {
+    id: 1,
     first_name: "John",
     last_name: "Doe",
     employee_number: 4444,

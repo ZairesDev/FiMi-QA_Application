@@ -31,14 +31,15 @@ CallSpecialistSuper.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    qa_agent: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: `QaAgent`,
-        key: `id`,
-      },
-    },
+
+    // qa_agent: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: `QaAgent`,
+    //     key: `id`,
+    //   },
+    // },
     // qa_supervisor: {
     //   type: DataTypes.STRING,
     //   allowNull: false,

@@ -61,14 +61,14 @@ EscalationUnit.init(
         key: `id`,
       },
     },
-    qa_supervisor: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: `QaSuper`,
-        key: `id`,
-      },
-    },
+    //  WE CAN REMOVE THIS qa_supervisor: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: `QaSuper`,
+    //     key: `id`,
+    //   },
+    // },
   },
   {
     sequelize,

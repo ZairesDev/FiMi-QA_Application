@@ -77,7 +77,6 @@ router.get("/", (req, res) => {
       "group",
       "supervisor_id",
       "qa_agent",
-      "qa_supervisor",
     ],
   })
     // .then(res.render("dashboard", { loggedIn: req.session.loggedIn }))
