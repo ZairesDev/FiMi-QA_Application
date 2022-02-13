@@ -43,14 +43,14 @@ QaAgent.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // qa_supervisor: {
-    //   type: DataTypes.integer,
-    //   allowNull: false,
-    //   references: {
-    //     model: `QaSuper`,
-    //     key: `id`,
-    //   },
-    // },
+    qa_supervisor: {
+      type: DataTypes.integer,
+      allowNull: false,
+      references: {
+        model: `QaSuper`,
+        key: `id`,
+      },
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,

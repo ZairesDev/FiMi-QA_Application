@@ -32,6 +32,7 @@ CallSpecialistSuper.init(
       allowNull: false,
     },
 
+    //WE CAN REMOVE THIS
     // qa_agent: {
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
@@ -40,6 +41,8 @@ CallSpecialistSuper.init(
     //     key: `id`,
     //   },
     // },
+
+    //WE CAN REMOE THIS
     // qa_supervisor: {
     //   type: DataTypes.STRING,
     //   allowNull: false,
