@@ -1,22 +1,32 @@
 const router = require("express").Router();
-const { Post, Comment, QaAgent } = require("../../models");
+const withAuth = require("../../../../../Downloads/14.5 (1)/utils/auth");
+const sequelize = require("../../config/connection");
+const { Post, Comment, QaAgent, QaSuper } = require("../../models");
 
-// get all users
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Post.findAll({
     attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "comment_text",
+          "post_id",
+          "user_id",
+          "created_at",
+          [
+            sequelize.literal(
+              "(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)"
+            ),
+            "like_count",
+          ],
+        ],
         include: {
           model: QaAgent,
+          QaSuper,
           attributes: ["username"],
         },
-      },
-      {
-        model: QaAgent,
-        attributes: ["username"],
       },
     ],
   })
@@ -27,7 +37,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
@@ -36,15 +46,24 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: [
+          "id",
+          "comment_text",
+          "post_id",
+          "user_id",
+          "created_at",
+          [
+            sequelize.literal(
+              "(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)"
+            ),
+            "like_count",
+          ],
+        ],
         include: {
           model: QaAgent,
+          QaSuper,
           attributes: ["username"],
         },
-      },
-      {
-        model: QaAgent,
-        attributes: ["username"],
       },
     ],
   })
@@ -61,7 +80,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   if (req.session) {
     Post.create({
       title: req.body.title,
@@ -75,7 +94,20 @@ router.post("/", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
+router.put("/like", withAuth, (req, res) => {
+  // custom static method created in models/like.js
+  Post.like(
+    { ...req.body, user_id: req.session.user_id },
+    { like, Comment, QaAgent, QaSuper }
+  )
+    .then((likeData) => res.json(likeData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
@@ -101,7 +133,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   console.log("id", req.params.id);
   Post.destroy({
     where: {
