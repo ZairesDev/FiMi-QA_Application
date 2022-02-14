@@ -6,7 +6,7 @@ async function signupFormHandler(e) {
   const password = document.querySelector("#passwordInput").value.trim();
 
   if (username && email && password) {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/qaagents", {
       method: "post",
       body: JSON.stringify({
         username,
@@ -36,7 +36,7 @@ async function loginFormHandler(e) {
   const password = document.querySelector("#logPasswordInput").value.trim();
 
   if (username && password) {
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("/api/qaagents/login", {
       method: "post",
       body: JSON.stringify({
         username,
