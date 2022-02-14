@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const { response } = require("express");
 const sequelize = require("../config/connection");
-const { Escalation_Unit } = require("../../models");
+const { Employee } = require("../../models");
 
 router.get("/", (req, res) => {
-  Escalation_Unit.findAll({
+  Employee.findAll({
     attributes: [
       "id",
       "first_name",
@@ -28,7 +28,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Escalation_Unit.findOne({
+  Employee.findOne({
     where: {
       id: req.params.id,
     },
@@ -56,7 +56,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   if (req.session) {
-    Escalation_Unit.create({
+    Employee.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       employee_number: req.body.employee_number,
@@ -76,7 +76,7 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Escalation_Unit.update(
+  Employee.update(
     {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
@@ -110,7 +110,7 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   console.log("id", req.params.id);
-  Escalation_Unit.destroy({
+  Employee.destroy({
     where: {
       id: req.params.id,
     },
