@@ -1,19 +1,17 @@
 const router = require("express").Router();
-const { QaAgent } = require("../../models");
+const { QaSuper } = require("../../models");
 
 router.get("/", (req, res) => {
-  QaAgent.findAll({
+  QaSuper.findAll({
     attributes: { exclude: ["password"] },
 
     attributes: [
       "id",
       "first_name",
       "last_name",
-      "agent_number",
-      "site",
+      "qa_agent",
       "language",
-      "qa_supervisor",
-      "call_specialist_count",
+      "site",
       "username",
       "email",
       "password",
@@ -28,7 +26,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  QaAgent.findOne({
+  QaSuper.findOne({
     where: {
       id: req.params.id,
     },
@@ -37,11 +35,9 @@ router.get("/:id", (req, res) => {
       "id",
       "first_name",
       "last_name",
-      "agent_number",
-      "site",
+      "qa_agent",
       "language",
-      "qa_supervisor",
-      "call_specialist_count",
+      "site",
       "username",
       "email",
       "password",
@@ -56,15 +52,12 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  QaAgent.create({
+  QaSuper.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    agent_number: req.body.agent_number,
-    site: req.body.site,
+    qa_agent: req.body.qa_agent,
     language: req.language,
-    start_date: req.body.start_date,
-    qa_supervisor: req.body.qa_supervisor,
-    call_specialist_count: req.body.call_specialist_count,
+    site: req.body.site,
     username: req.username,
     email: req.email,
     password: req.body.password,
@@ -77,16 +70,13 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  QaAgent.update(
+  QaSuper.update(
     {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
-      agent_number: req.body.agent_number,
-      site: req.body.site,
+      qa_agent: req.body.qa_agent,
       language: req.language,
-      start_date: req.body.start_date,
-      qa_supervisor: req.body.qa_supervisor,
-      call_specialist_count: req.body.call_specialist_count,
+      site: req.body.site,
       username: req.username,
       email: req.email,
       password: req.body.password,
@@ -112,7 +102,7 @@ router.put("/:id", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  QaAgent.findOne({
+  QaSuper.findOne({
     where: {
       username: req.body.username,
     },
@@ -150,7 +140,7 @@ router.post("/logout", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  QaAgent.destroy({
+  QaSuper.destroy({
     where: {
       id: req.params.id,
     },
