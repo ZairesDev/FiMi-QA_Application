@@ -16,10 +16,6 @@ QaAgent.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    group: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -44,7 +40,7 @@ QaAgent.init(
       allowNull: false,
     },
     qa_supervisor: {
-      type: DataTypes.integer,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: `QaSuper`,

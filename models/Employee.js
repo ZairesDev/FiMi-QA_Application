@@ -1,9 +1,10 @@
 const { Model, DataTypes } = require(`sequelize`);
+
 const sequelize = require(`../config/connection`);
 
-class CallSpecialist extends Model {}
+class Employee extends Model {}
 
-CallSpecialist.init(
+Employee.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -76,8 +77,8 @@ CallSpecialist.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `CallSpecialist`,
+    modelName: `Employee`,
   }
 );
 
-module.exports = CallSpecialist;
+module.exports = Employee;

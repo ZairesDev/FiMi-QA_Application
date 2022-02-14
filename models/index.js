@@ -2,8 +2,6 @@ const QaSuper = require(`./QaSuper`);
 const QaAgent = require(`./QaAgent`);
 const EuSuper = require(`./EscalationUnitSuper`);
 const CallRepSuper = require(`./CallSpecialistSuper`);
-const CallRep = require(`./CallSpecialist`);
-const EscalationUnitSuper = require("./EscalationUnitSuper");
 const Employee = require("./Employee");
 
 Employee.belongsTo(CallRepSuper, {
