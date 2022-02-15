@@ -11,11 +11,11 @@ const EmployeeData = [
     role: "CSR",
     language: "SPN",
     group: "A",
-    employee_supervisor_id: null,
-    qa_agent: null,
+    employee_supervisor_id: 3,
+    qa_agent: 3,
   },
 ];
 
-const seedPhoneSatff = () => Employee.bulkCreate(EmployeeData);
+const seedPhoneStaff = () => Employee.bulkCreate(EmployeeData);
 
-module.exports = seedPhoneSatff;
+module.exports = seedPhoneStaff;

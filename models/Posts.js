@@ -17,24 +17,17 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    post_url: {
+    post_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isURL: true,
+        lens: [1],
       },
     },
-    agent_id: {
+    qaSuper_id: {
       type: DataTypes.INTEGER,
       references: {
         model: `QaAgent`,
-        key: `id`,
-      },
-    },
-    supervisor_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: `QaSuper`,
         key: `id`,
       },
     },
