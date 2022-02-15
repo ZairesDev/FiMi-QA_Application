@@ -1,14 +1,9 @@
 const QaSuper = require(`./QaSuper`);
 const QaAgent = require(`./QaAgent`);
-const EuSuper = require(`./EscalationUnitSuper`);
-const CallRepSuper = require(`./CallSpecialistSuper`);
+const EmployeeSuper = require(`./EmployeeSuper`);
 const Employee = require("./Employee");
 
-Employee.belongsTo(CallRepSuper, {
-  foreignKey: `id`,
-});
-
-Employee.belongsTo(EuSuper, {
+Employee.belongsTo(EmployeeSuper, {
   foreignKey: `id`,
 });
 
@@ -48,7 +43,6 @@ Employee.belongsTo(QaAgent, {
 module.exports = {
   QaSuper,
   QaAgent,
-  EuSuper,
-  CallRepSuper,
+  EmployeeSuper,
   Employee,
 };

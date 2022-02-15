@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require(`sequelize`);
 const sequelize = require(`../config/connection`);
 
-class CallSpecialistSuper extends Model {}
+class EmployeeSuper extends Model {}
 
-CallSpecialistSuper.init(
+EmployeeSuper.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -31,34 +31,14 @@ CallSpecialistSuper.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    //WE CAN REMOVE THIS
-    // qa_agent: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: `QaAgent`,
-    //     key: `id`,
-    //   },
-    // },
-
-    //WE CAN REMOE THIS
-    // qa_supervisor: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   references: {
-    //     model: `QaSuper`,
-    //     key: `id`,
-    //   },
-    // },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `CallSpecialistSuper`,
+    modelName: `EmployeeSuper`,
   }
 );
 
-module.exports = CallSpecialistSuper;
+module.exports = EmployeeSuper;
