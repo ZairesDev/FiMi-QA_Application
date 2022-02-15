@@ -1,35 +1,28 @@
 const QaSuper = require(`./QaSuper`);
 const QaAgent = require(`./QaAgent`);
 const EmployeeSuper = require(`./EmployeeSuper`);
-const Employee = require("./Employee");
-
-// EmployeeSuper.hasMany(Employee, {
-//   foreignKey: `id`,
-// });
-
-// QaAgent.hasMany(Employee, {
-//   foreignKey: `id`,
-// });
-
-// CallRepSuper.hasMany(CallRep, {
-//   foreignKey: `id`,
-// });
+const Employee = require(`./Employee`);
+const EmployeeTracker = require(`./EmployeeTracker`);
 
 QaAgent.hasMany(Employee, {
-  through: Employee,
+  through: EmployeeTracker,
   as: `CSR counts`,
   foreignKey: `id`,
+  onDelete: `SET NULL`,
 });
 
 QaAgent.hasMany(EmployeeSuper, {
-  through: EmployeeSuper,
+  through: EmployeeTracker,
   as: `CSR counts`,
   foreignKey: `id`,
+  onDelete: `SET NULL`,
 });
 
 QaSuper.hasMany(QaAgent, {
-  through: QaAgent,
+  through: EmployeeTracker,
+  as: `Agents`,
   foreignKey: `id`,
+  onDelete: `SET NULL`,
 });
 
 module.exports = {
@@ -37,4 +30,5 @@ module.exports = {
   QaAgent,
   EmployeeSuper,
   Employee,
+  EmployeeTracker,
 };
