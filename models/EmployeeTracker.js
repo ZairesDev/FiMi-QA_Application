@@ -18,7 +18,7 @@ EmployeeTracker.init(
         key: `id`,
       },
     },
-    EmployeeSuper: {
+    employeeSuper_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -26,7 +26,15 @@ EmployeeTracker.init(
         key: `id`,
       },
     },
-    QaAgent: {
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: `Posts`,
+        key: `id`,
+      },
+    },
+    qaAgent_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -34,7 +42,7 @@ EmployeeTracker.init(
         key: `id`,
       },
     },
-    QaSuper: {
+    qaSuper_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
