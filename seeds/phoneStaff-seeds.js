@@ -1,6 +1,6 @@
-const { CallRep } = require("../models");
+const { Employee } = require("../models");
 
-const CallSpecialistData = [
+const EmployeeData = [
   {
     id: 1,
     first_name: "John",
@@ -11,11 +11,11 @@ const CallSpecialistData = [
     role: "CSR",
     language: "SPN",
     group: "A",
-    supervisor_id: 1,
-    qa_agent: 2,
+    employee_supervisor_id: null,
+    qa_agent: null,
   },
 ];
 
-const seedPhoneSatff = () => CallRep.bulkCreate(CallSpecialistData);
+const seedPhoneSatff = () => Employee.bulkCreate(EmployeeData);
 
 module.exports = seedPhoneSatff;

@@ -47,17 +47,10 @@ Employee.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    csr_supervisor_id: {
+    employee_supervisor_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: `CallSpecialistSuper`,
-        key: `id`,
-      },
-    },
-    escalation_supervisor_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: `EscalationUnitSuper`,
+        model: `EmployeeSuper`,
         key: `id`,
       },
     },
