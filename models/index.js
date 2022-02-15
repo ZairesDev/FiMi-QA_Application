@@ -11,15 +11,7 @@ Employee.belongsTo(QaAgent, {
   foreignKey: `id`,
 });
 
-// EmployeeSuper.hasMany(Employee, {
-//   foreignKey: `id`,
-// });
-
-// EmployeeSuper.belongsToMany(QaAgent, {
-//   foreignKey: `id`,
-// });
-
-// EmployeeSuper.belongsToMany(QaSuper, {
+// CallRepSuper.hasMany(CallRep, {
 //   foreignKey: `id`,
 // });
 
