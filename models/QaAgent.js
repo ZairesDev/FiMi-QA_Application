@@ -39,7 +39,7 @@ QaAgent.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    qa_supervisor: {
+    qaSuper_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

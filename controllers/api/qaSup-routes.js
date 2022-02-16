@@ -9,7 +9,6 @@ router.get("/", (req, res) => {
       "id",
       "first_name",
       "last_name",
-      "qa_agent",
       "language",
       "site",
       "username",
@@ -35,7 +34,6 @@ router.get("/:id", (req, res) => {
       "id",
       "first_name",
       "last_name",
-      "qa_agent",
       "language",
       "site",
       "username",
@@ -55,11 +53,10 @@ router.post("/", (req, res) => {
   QaSuper.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
-    qa_agent: req.body.qa_agent,
-    language: req.language,
+    language: req.body.language,
     site: req.body.site,
-    username: req.username,
-    email: req.email,
+    username: req.body.username,
+    email: req.body.email,
     password: req.body.password,
   })
     .then((qaData) => res.json(qaData))
@@ -74,11 +71,10 @@ router.put("/:id", (req, res) => {
     {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
-      qa_agent: req.body.qa_agent,
-      language: req.language,
+      language: req.body.language,
       site: req.body.site,
-      username: req.username,
-      email: req.email,
+      username: req.body.username,
+      email: req.body.email,
       password: req.body.password,
     },
 
