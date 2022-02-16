@@ -22,15 +22,15 @@ QaAgent.belongsToMany(Employee, {
 Employee.belongsTo(EmployeeSuper, {
   through: EmployeeTracker,
   as: `employee`,
-  foreignKey: "employeesuper_id",
-  onDelete: "CASCADE",
+  foreignKey: `employeesuper_id`,
+  onDelete: `CASCADE`,
 });
 
 EmployeeSuper.belongsToMany(Employee, {
   through: EmployeeTracker,
   as: `employee_supervisor`,
-  foreignKey: "employeesuper_id",
-  onDelete: "CASCADE",
+  foreignKey: `employeesuper_id`,
+  onDelete: `CASCADE`,
 });
 
 Post.belongsTo(QaSuper, {
@@ -45,7 +45,7 @@ QaSuper.belongsToMany(QaAgent, {
   through: EmployeeTracker,
   as: `agent_supervisor`,
   foreignKey: `qaSuper_id`,
-  onDelete: `SET NULL`,
+  onDelete: `CASCADE`,
 });
 
 module.exports = {

@@ -10,8 +10,8 @@ const EmployeeData = [
     role: "CSR",
     language: "SPN",
     group: "A",
-    employee_supervisor_id: 1,
-    qa_agent: 1,
+    employeesuper_id: 1,
+    qaAgent_id: 1,
   },
   {
     id: 2,
@@ -22,8 +22,8 @@ const EmployeeData = [
     role: "CSR",
     language: "ENG",
     group: "A",
-    employee_supervisor_id: 1,
-    qa_agent: 1,
+    employeesuper_id: 1,
+    qaAgent_id: 1,
   },
   {
     id: 3,
@@ -34,8 +34,8 @@ const EmployeeData = [
     role: "CSR",
     language: "ENG",
     group: "A",
-    employee_supervisor_id: 1,
-    qa_agent: 1,
+    employeesuper_id: 1,
+    qaAgent_id: 1,
   },
   {
     id: 4,
@@ -46,8 +46,8 @@ const EmployeeData = [
     role: "CSR",
     language: "SPN",
     group: "B",
-    employee_supervisor_id: 2,
-    qa_agent: 2,
+    employeesuper_id: 2,
+    qaAgent_id: 2,
   },
   {
     id: 5,
@@ -58,8 +58,8 @@ const EmployeeData = [
     role: "CSR",
     language: "ENG",
     group: "B",
-    employee_supervisor_id: 2,
-    qa_agent: 2,
+    employeesuper_id: 2,
+    qaAgent_id: 2,
   },
   {
     id: 6,
@@ -70,8 +70,8 @@ const EmployeeData = [
     role: "CSR",
     language: "SPN",
     group: "B",
-    employee_supervisor_id: 2,
-    qa_agent: 2,
+    employeesuper_id: 2,
+    qaAgent_id: 2,
   },
   {
     id: 7,
@@ -82,8 +82,8 @@ const EmployeeData = [
     role: "EU",
     language: "SPN",
     group: "A",
-    employee_supervisor_id: 3,
-    qa_agent: 3,
+    employeesuper_id: 3,
+    qaAgent_id: 3,
   },
   {
     id: 8,
@@ -94,8 +94,8 @@ const EmployeeData = [
     role: "EU",
     language: "ENG",
     group: "A",
-    employee_supervisor_id: 3,
-    qa_agent: 3,
+    employeesuper_id: 3,
+    qaAgent_id: 3,
   },
   {
     id: 9,
@@ -106,8 +106,8 @@ const EmployeeData = [
     role: "EU",
     language: "SPN",
     group: "A",
-    employee_supervisor_id: 3,
-    qa_agent: 3,
+    employeesuper_id: 3,
+    qaAgent_id: 3,
   },
 ];
 

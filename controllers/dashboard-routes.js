@@ -14,8 +14,8 @@ router.get("/", (req, res) => {
       "role",
       "language",
       "group",
-      "employee_supervisor_id",
-      "qa_agent",
+      "employeesuper_id",
+      "qaAgent_id",
     ],
   })
     .then(res.render("dashboard", { loggedIn: req.session.loggedIn }))
@@ -39,8 +39,8 @@ router.get("/:id", (req, res) => {
       "role",
       "language",
       "group",
-      "employee_supervisor_id",
-      "qa_agent",
+      "employeesuper_id",
+      "qaAgent_id",
     ],
   })
 
