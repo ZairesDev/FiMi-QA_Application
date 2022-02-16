@@ -14,7 +14,7 @@ EmployeeTracker.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: `Employee`,
+        model: `employee`,
         key: `id`,
       },
     },
@@ -22,7 +22,7 @@ EmployeeTracker.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: `EmployeeSuper`,
+        model: `employeesuper`,
         key: `id`,
       },
     },
@@ -30,7 +30,7 @@ EmployeeTracker.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: `Posts`,
+        model: `Post`,
         key: `id`,
       },
     },
@@ -38,7 +38,7 @@ EmployeeTracker.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: `QaAgent`,
+        model: `qaagent`,
         key: `id`,
       },
     },
@@ -46,7 +46,7 @@ EmployeeTracker.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: `QaSuper`,
+        model: `qasuper`,
         key: `id`,
       },
     },
@@ -56,7 +56,7 @@ EmployeeTracker.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `EmployeeTracker`,
+    modelName: `employeetracker`,
   }
 );
 

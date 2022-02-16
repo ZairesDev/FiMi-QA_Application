@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require(`sequelize`);
-
 const sequelize = require(`../config/connection`);
 
 class Employee extends Model {}
@@ -50,7 +49,7 @@ Employee.init(
     employee_supervisor_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: `EmployeeSuper`,
+        model: `employeesuper`,
         key: `id`,
       },
     },
@@ -58,7 +57,7 @@ Employee.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: `QaAgent`,
+        model: `qaagent`,
         key: `id`,
       },
     },
@@ -68,7 +67,7 @@ Employee.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `Employee`,
+    modelName: `employee`,
   }
 );
 

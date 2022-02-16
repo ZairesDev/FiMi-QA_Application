@@ -37,7 +37,7 @@ EmployeeSuper.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `EmployeeSuper`,
+    modelName: `employeesuper`,
   }
 );
 

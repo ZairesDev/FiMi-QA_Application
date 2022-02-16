@@ -76,7 +76,7 @@ QaSuper.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `QaSuper`,
+    modelName: `qasuper`,
   }
 );
 

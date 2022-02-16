@@ -3,43 +3,27 @@ const QaAgent = require(`./QaAgent`);
 const EmployeeSuper = require(`./EmployeeSuper`);
 const Employee = require(`./Employee`);
 const EmployeeTracker = require(`./EmployeeTracker`);
-const Post = require(`./Posts`);
+const Post = require(`./Post`);
 
 // TODO: fix constraint errors in office hours
 
-Employee.belongsToMany(QaAgent, {
-  through: EmployeeTracker,
-  as: `csr count`,
-  foreignKey: `employee_id`,
-  onDELETE: `SET NULL`,
+Employee.belongsTo(QaAgent, {
+  foreignKey: `id`,
 });
 
-EmployeeSuper.belongsToMany(QaAgent, {
+QaAgent.hasMany(Employee, {
+  foreignKey: `id`,
+});
+
+QaAgent.belongsToMany(Employee, {
   through: EmployeeTracker,
-  as: `csr supervisor count`,
-  foreignKey: `employeeSuper_id`,
+  as: `CSR counts`,
+  foreignKey: `qaAgent_id`,
   onDelete: `SET NULL`,
 });
 
-// QaAgent.belongsToMany(Employee, {
-//   through: EmployeeTracker,
-//   as: `CSR counts`,
-//   foreignKey: `qaAgent_id`,
-//   onDelete: `SET NULL`,
-// });
-
-// QaAgent.belongsToMany(EmployeeSuper, {
-//   through: EmployeeTracker,
-//   as: `CSR super counts`,
-//   foreignKey: `qaAgent_id`,
-//   onDelete: `SET NULL`,
-// });
-
-Post.belongsToMany(QaAgent, {
-  through: EmployeeTracker,
-  as: `review_comment`,
-  foreignKey: `post_id`,
-  onDelete: `SET NULL`,
+Post.belongsTo(QaSuper, {
+  foreignKey: `id`,
 });
 
 QaSuper.hasMany(Post, {

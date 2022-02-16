@@ -43,19 +43,10 @@ QaAgent.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: `QaSuper`,
+        model: `qasuper`,
         key: `id`,
       },
     },
-    // call_specialist_count: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: `Employee`,
-    //     // TODO: figure out how to give/show total number of call specialists under his/her current review
-    //     key: `id`,
-    //   },
-    // },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -100,7 +91,7 @@ QaAgent.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: `QaAgent`,
+    modelName: `qaagent`,
   }
 );
 
