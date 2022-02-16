@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
       "role",
       "language",
       "group",
-      "supervisor_id",
+      "employee_supervisor_id",
       "qa_agent",
     ],
   })
@@ -41,7 +41,7 @@ router.get("/:id", (req, res) => {
       "role",
       "language",
       "group",
-      "supervisor_id",
+      "employee_supervisor_id",
       "qa_agent",
     ],
   })
@@ -60,10 +60,10 @@ router.post("/", (req, res) => {
       last_name: req.body.last_name,
       employee_number: req.body.employee_number,
       site: req.body.site,
-      start_date: req.body.start_date,
       role: req.body.role,
-      language: req.language,
-      group: req.group,
+      language: req.body.language,
+      group: req.body.group,
+      employee_supervisor_id: req.body.employee_supervisor_id,
       qa_agent: req.body.qa_agent,
     })
       .then((callRepData) => res.json(callRepData))
@@ -81,10 +81,9 @@ router.put("/:id", (req, res) => {
       last_name: req.body.last_name,
       employee_number: req.body.employee_number,
       site: req.body.site,
-      start_date: req.body.start_date,
       role: req.body.role,
-      language: req.language,
-      group: req.group,
+      language: req.body.language,
+      group: req.body.group,
       qa_agent: req.body.qa_agent,
     },
 

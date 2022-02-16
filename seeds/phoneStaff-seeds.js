@@ -11,8 +11,8 @@ const EmployeeData = [
     role: "CSR",
     language: "SPN",
     group: "A",
-    employee_supervisor_id: 3,
-    qa_agent: 3,
+    employee_supervisor_id: null,
+    qa_agent: null,
   },
 ];
 

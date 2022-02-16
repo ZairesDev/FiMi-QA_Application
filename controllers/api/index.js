@@ -10,7 +10,7 @@ const qaSupRoutes = require("./qaSup-routes");
 router.use("/employees", empRoutes);
 router.use("/qa", qaRoutes);
 // router.use("/comments", commentRoutes);
-// router.use("/posts", postRoutes);
+// router.use("/post", postRoutes);
 router.use("/qasup", qaSupRoutes);
 
 module.exports = router;

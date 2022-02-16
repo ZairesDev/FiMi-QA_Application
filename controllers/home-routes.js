@@ -35,10 +35,10 @@ router.get("/", (req, res) => {
     ],
   })
     .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
+      const post = dbPostData.map((post) => post.get({ plain: true }));
 
       res.render("homepage", {
-        posts,
+        post,
         loggedIn: req.session.loggedIn,
       });
     })
@@ -48,7 +48,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/posts/:id", (req, res) => {
+router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,

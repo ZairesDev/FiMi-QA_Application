@@ -27,7 +27,7 @@ Post.init(
     qaSuper_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: `qcleaaSuper`,
+        model: `qasuper`,
         key: `id`,
       },
     },

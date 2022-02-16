@@ -30,10 +30,6 @@ Employee.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    start_date: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
     role: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -55,7 +51,7 @@ Employee.init(
     },
     qa_agent: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      // allowNull: false,
       references: {
         model: `qaagent`,
         key: `id`,
