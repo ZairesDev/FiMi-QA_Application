@@ -5,38 +5,33 @@ const Employee = require(`./Employee`);
 const EmployeeTracker = require(`./EmployeeTracker`);
 const Post = require(`./Post`);
 
-// TODO: fix constraint errors in class. Good luck with life bud. :)
-
 Employee.belongsTo(QaAgent, {
   through: EmployeeTracker,
+  as: `CSR Count`,
   foreignKey: `qaAgent_id`,
   onDelete: `CASCADE`,
 });
 
 QaAgent.belongsToMany(Employee, {
   through: EmployeeTracker,
+  as: `qa_agent`,
   foreignKey: `qaAgent_id`,
   onDelete: `CASCADE`,
 });
 
 Employee.belongsTo(EmployeeSuper, {
   through: EmployeeTracker,
+  as: `employee`,
   foreignKey: "employeesuper_id",
   onDelete: "CASCADE",
 });
 
 EmployeeSuper.belongsToMany(Employee, {
   through: EmployeeTracker,
+  as: `employee_supervisor`,
   foreignKey: "employeesuper_id",
   onDelete: "CASCADE",
 });
-
-// QaAgent.belongsToMany(Employee, {
-//   through: EmployeeTracker,
-//   as: `CSR counts`,
-//   foreignKey: `qaAgent_id`,
-//   onDelete: `SET NULL`,
-// });
 
 Post.belongsTo(QaSuper, {
   foreignKey: `id`,
@@ -48,7 +43,7 @@ QaSuper.hasMany(Post, {
 
 QaSuper.belongsToMany(QaAgent, {
   through: EmployeeTracker,
-  as: `Agents`,
+  as: `agent_supervisor`,
   foreignKey: `qaSuper_id`,
   onDelete: `SET NULL`,
 });
