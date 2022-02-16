@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
       "role",
       "language",
       "group",
-      "employee_supervisor_id",
+      "employeesuper_id",
       "qaAgent_id",
     ],
   })
@@ -73,31 +73,29 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Employee.update(
-    {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      employee_number: req.body.employee_number,
-      site: req.body.site,
-      role: req.body.role,
-      language: req.body.language,
-      group: req.body.group,
-      employee_supervisor_id: req.body.employee_supervisor_id,
-      qaAgent_id: req.body.qaAgent_id,
+  Employee.update(req.body, {
+    where: {
+      id: req.params.id,
     },
+  })
+    // {
+    //   first_name: req.body.first_name,
+    //   last_name: req.body.last_name,
+    //   employee_number: req.body.employee_number,
+    //   site: req.body.site,
+    //   role: req.body.role,
+    //   language: req.body.language,
+    //   group: req.body.group,
+    //   employee_supervisor_id: req.body.employee_supervisor_id,
+    //   qaAgent_id: req.body.qaAgent_id,
+    // }
 
-    {
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
     .then((employeeData) => {
       if (employeeData) {
         res.status(404).json({ message: "No call rep found" });
         return;
       }
-      res.json(callRepData);
+      res.json(employeeData);
     })
     .catch((err) => {
       console.log(err);

@@ -18,9 +18,6 @@ Post.init(
     post_text: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        lens: [1],
-      },
     },
     qaSuper_id: {
       type: DataTypes.INTEGER,

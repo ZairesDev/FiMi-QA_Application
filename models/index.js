@@ -19,12 +19,12 @@ QaAgent.belongsToMany(Employee, {
   onDelete: `CASCADE`,
 });
 
-// Employee.belongsTo(EmployeeSuper, {
-//   through: EmployeeTracker,
-//   as: `employee`,
-//   foreignKey: "employeesuper_id",
-//   onDelete: "CASCADE",
-// });
+Employee.belongsTo(EmployeeSuper, {
+  through: EmployeeTracker,
+  as: `employee`,
+  foreignKey: "employeesuper_id",
+  onDelete: "CASCADE",
+});
 
 EmployeeSuper.belongsToMany(Employee, {
   through: EmployeeTracker,
