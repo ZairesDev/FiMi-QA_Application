@@ -1,6 +1,5 @@
 const router = require("express").Router();
-
-const { Employee } = require("../../models");
+const { Employee } = require("../models");
 
 router.get("/", (req, res) => {
   Employee.findAll({
@@ -17,8 +16,7 @@ router.get("/", (req, res) => {
       "qa_agent",
     ],
   })
-
-    .then((employeeData) => res.json(employeeData))
+    .then(res.render("empform", { loggedIn: req.session.loggedIn }))
 
     .catch((err) => {
       res.status(500).json(err);
@@ -44,7 +42,7 @@ router.get("/:id", (req, res) => {
     ],
   })
 
-    .then((employeeData) => res.json(employeeData))
+    .then(res.render("empform", { loggedIn: req.session.loggedIn }))
 
     .catch((err) => {
       res.status(500).json(err);
@@ -94,10 +92,10 @@ router.put("/:id", (req, res) => {
   )
     .then((employeeData) => {
       if (employeeData) {
-        res.status(404).json({ message: "No call rep found" });
+        res.status(404).json({ message: "No employee found" });
         return;
       }
-      res.json(callRepData);
+      res.json(employeeData);
     })
     .catch((err) => {
       console.log(err);
@@ -113,8 +111,8 @@ router.delete("/:id", (req, res) => {
     },
   })
     .then((employeeData) => {
-      if (!employeeData) {
-        res.status(404).json({ message: "No call rep found with this id" });
+      if (!callRepData) {
+        res.status(404).json({ message: "No employee found" });
         return;
       }
       res.json(employeeData);

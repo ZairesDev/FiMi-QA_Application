@@ -1,6 +1,4 @@
 const router = require("express").Router();
-const { response } = require("express");
-const sequelize = require("../config/connection");
 const { Employee } = require("../models");
 
 router.get("/", (req, res) => {
@@ -18,7 +16,7 @@ router.get("/", (req, res) => {
       "qa_agent",
     ],
   })
-    .then(res.render("dashboard", { loggedIn: req.session.loggedIn }))
+    .then(res.render("empform", { loggedIn: req.session.loggedIn }))
 
     .catch((err) => {
       res.status(500).json(err);
@@ -44,7 +42,7 @@ router.get("/:id", (req, res) => {
     ],
   })
 
-    .then(res.render("dashboard", { loggedIn: req.session.loggedIn }))
+    .then(res.render("empform", { loggedIn: req.session.loggedIn }))
 
     .catch((err) => {
       res.status(500).json(err);
