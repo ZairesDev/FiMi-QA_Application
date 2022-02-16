@@ -68,15 +68,7 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   QaSuper.update(
-    {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      language: req.body.language,
-      site: req.body.site,
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    },
+    req.body,
 
     {
       where: {
@@ -85,7 +77,7 @@ router.put("/:id", (req, res) => {
     }
   )
     .then((qaData) => {
-      if (qaData) {
+      if (!qaData) {
         res.status(404).json({ message: "No QA agent found" });
         return;
       }

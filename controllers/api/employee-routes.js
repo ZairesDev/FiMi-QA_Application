@@ -78,20 +78,9 @@ router.put("/:id", (req, res) => {
       id: req.params.id,
     },
   })
-    // {
-    //   first_name: req.body.first_name,
-    //   last_name: req.body.last_name,
-    //   employee_number: req.body.employee_number,
-    //   site: req.body.site,
-    //   role: req.body.role,
-    //   language: req.body.language,
-    //   group: req.body.group,
-    //   employee_supervisor_id: req.body.employee_supervisor_id,
-    //   qaAgent_id: req.body.qaAgent_id,
-    // }
 
     .then((employeeData) => {
-      if (employeeData) {
+      if (!employeeData) {
         res.status(404).json({ message: "No call rep found" });
         return;
       }

@@ -34,6 +34,7 @@ EmployeeSuper.belongsToMany(Employee, {
 });
 
 Post.belongsTo(QaSuper, {
+  through: EmployeeTracker,
   foreignKey: `id`,
 });
 
