@@ -8,24 +8,28 @@ const Post = require(`./Post`);
 // TODO: fix constraint errors in class. Good luck with life bud. :)
 
 Employee.belongsTo(QaAgent, {
-  foreignKey: `qa_agent`,
+  through: EmployeeTracker,
+  foreignKey: `qaAgent_id`,
   onDelete: `CASCADE`,
 });
 
-QaAgent.hasMany(Employee, {
-  foreignKey: `qa_agent`,
+QaAgent.belongsToMany(Employee, {
+  through: EmployeeTracker,
+  foreignKey: `qaAgent_id`,
   onDelete: `CASCADE`,
 });
 
-// Employee.belongsTo(EmployeeSuper, {
-//   foreignKey: "employee_supervisor_id",
-//   onDelete: `CASCADE`,
-// });
+Employee.belongsTo(EmployeeSuper, {
+  through: EmployeeTracker,
+  foreignKey: "employeesuper_id",
+  onDelete: "CASCADE",
+});
 
-// EmployeeSuper.hasMany(Employee, {
-//   foreignKey: "employee_supervisor_id",
-//   onDelete: "CASCADE",
-// });
+EmployeeSuper.belongsToMany(Employee, {
+  through: EmployeeTracker,
+  foreignKey: "employeesuper_id",
+  onDelete: "CASCADE",
+});
 
 // QaAgent.belongsToMany(Employee, {
 //   through: EmployeeTracker,
