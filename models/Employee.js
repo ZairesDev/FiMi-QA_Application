@@ -42,14 +42,14 @@ Employee.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    employee_supervisor_id: {
+    employeesuper_id: {
       type: DataTypes.INTEGER,
       references: {
         model: `employeesuper`,
         key: `id`,
       },
     },
-    qa_agent: {
+    qaAgent_id: {
       type: DataTypes.INTEGER,
       // allowNull: false,
       references: {
