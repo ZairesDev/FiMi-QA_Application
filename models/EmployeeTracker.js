@@ -18,6 +18,7 @@ EmployeeTracker.init(
         key: `id`,
       },
     },
+
     employeeSuper_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
