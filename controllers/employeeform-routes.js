@@ -39,7 +39,8 @@ router.get("/:id", (req, res) => {
       "group",
       "employee_supervisor_id",
       "qa_agent",
-    });
+    ],
+  });
 });
 
 router.post("/", (req, res) => {
