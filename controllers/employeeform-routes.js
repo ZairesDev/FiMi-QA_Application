@@ -39,13 +39,6 @@ router.get("/:id", (req, res) => {
       "group",
       "employee_supervisor_id",
       "qa_agent",
-    ],
-  })
-
-    .then(res.render("empform", { loggedIn: req.session.loggedIn }))
-
-    .catch((err) => {
-      res.status(500).json(err);
     });
 });
 
