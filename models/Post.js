@@ -1,9 +1,7 @@
 const { Model, DataTypes } = require(`sequelize`);
 const sequelize = require(`../config/connection`);
 
-class Post extends Model {
-  // TODO: create static model to connect QaAgent and QaSuper for comments
-}
+class Post extends Model {}
 
 Post.init(
   {
