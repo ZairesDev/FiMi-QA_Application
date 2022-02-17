@@ -19,10 +19,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    qaSuper_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: `qasuper`,
+        model: `loggeduser`,
         key: `id`,
       },
     },
