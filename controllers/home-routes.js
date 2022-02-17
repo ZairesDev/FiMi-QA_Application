@@ -1,70 +1,74 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-const { Post, QaSuper } = require("../models");
+const { Post, QaSuper } = require('../models');
 
-router.get("/", (req, res) => {
-    Post.findAll({
-            attributes: ["id", "title", "post_text", "created_at"],
-            include: [{
-                model: QaSuper,
+router.get('/', (req, res) => {
+  Post.findAll({
+    attributes: ['id', 'title', 'post_text', 'created_at'],
+    include: [
+      {
+        model: QaSuper,
 
-                attributes: ["username"],
-            }, ],
-        })
-        .then((dbPostData) => {
-            const post = dbPostData.map((post) => post.get({ plain: true }));
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      const post = dbPostData.map((post) => post.get({ plain: true }));
 
-            res.render("homepage", {
-                post,
-                loggedIn: req.session.loggedIn,
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+      res.render('homepage', {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
-router.get("/post/:id", (req, res) => {
-    Post.findOne({
-            where: {
-                id: req.params.id,
-            },
-            attributes: ["id", "title", "post_text", "created_at"],
-            include: [{
-                include: {
-                    model: QaSuper,
+router.get('/post/:id', (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ['id', 'title', 'post_text', 'created_at'],
+    include: [
+      {
+        include: {
+          model: QaSuper,
 
-                    attributes: ["username"],
-                },
-            }, ],
-        })
-        .then((dbPostData) => {
-            if (!dbPostData) {
-                res.status(404).json({ message: "No post found with this id" });
-                return;
-            }
-
-            const post = dbPostData.get({ plain: true });
-
-            res.render("single-post", {
-                post,
-                loggedIn: req.session.loggedIn,
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-router.get("/login", (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect("/");
+          attributes: ['username'],
+        },
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
         return;
-    }
+      }
 
-    res.render("login");
+      const post = dbPostData.get({ plain: true });
+
+      res.render('single-post', {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
 
 module.exports = router;
