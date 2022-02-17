@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
       "language",
       "group",
       "employee_supervisor_id",
-      "qa_agent",
+      "qaAgent_id",
     ],
   })
     .then(res.render("empform", { loggedIn: req.session.loggedIn }))
@@ -38,7 +38,7 @@ router.get("/:id", (req, res) => {
       "language",
       "group",
       "employee_supervisor_id",
-      "qa_agent",
+      "qaAgent_id",
     ],
   })
     .then(res.render("empform", { loggedIn: req.session.loggedIn }))
@@ -59,7 +59,7 @@ router.post("/", (req, res) => {
       language: req.body.language,
       group: req.body.group,
       employee_supervisor_id: req.body.employee_supervisor_id,
-      qa_agent: req.body.qa_agent,
+      qaAgent_id: req.body.qaAgent_id,
     })
       .then((employeeData) => res.json(employeeData))
       .catch((err) => {
@@ -70,27 +70,13 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Employee.update(
-    {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      employee_number: req.body.employee_number,
-      site: req.body.site,
-      role: req.body.role,
-      language: req.body.language,
-      group: req.body.group,
-      employee_supervisor_id: req.body.employee_supervisor_id,
-      qa_agent: req.body.qa_agent,
+  Employee.update(req.body, {
+    where: {
+      id: req.params.id,
     },
-
-    {
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
+  })
     .then((employeeData) => {
-      if (employeeData) {
+      if (!employeeData) {
         res.status(404).json({ message: "No employee found" });
         return;
       }
@@ -110,7 +96,7 @@ router.delete("/:id", (req, res) => {
     },
   })
     .then((employeeData) => {
-      if (!callRepData) {
+      if (!employeeData) {
         res.status(404).json({ message: "No employee found" });
         return;
       }

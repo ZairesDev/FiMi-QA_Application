@@ -12,8 +12,7 @@ router.get("/", (req, res) => {
       "agent_number",
       "site",
       "language",
-      "qa_supervisor",
-      "call_specialist_count",
+      "qaSuper_id",
       "username",
       "email",
       "password",
@@ -40,8 +39,7 @@ router.get("/:id", (req, res) => {
       "agent_number",
       "site",
       "language",
-      "qa_supervisor",
-      "call_specialist_count",
+      "qaSuper_id",
       "username",
       "email",
       "password",
@@ -61,12 +59,11 @@ router.post("/", (req, res) => {
     last_name: req.body.last_name,
     agent_number: req.body.agent_number,
     site: req.body.site,
-    language: req.language,
+    language: req.body.language,
     start_date: req.body.start_date,
-    qa_supervisor: req.body.qa_supervisor,
-    call_specialist_count: req.body.call_specialist_count,
-    username: req.username,
-    email: req.email,
+    qaSuper_id: req.body.qaSuper_id,
+    username: req.body.username,
+    email: req.body.email,
     password: req.body.password,
   })
     .then((qaData) => res.json(qaData))
@@ -78,19 +75,7 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   QaAgent.update(
-    {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      agent_number: req.body.agent_number,
-      site: req.body.site,
-      language: req.language,
-      start_date: req.body.start_date,
-      qa_supervisor: req.body.qa_supervisor,
-      call_specialist_count: req.body.call_specialist_count,
-      username: req.username,
-      email: req.email,
-      password: req.body.password,
-    },
+    req.body,
 
     {
       where: {
@@ -99,7 +84,7 @@ router.put("/:id", (req, res) => {
     }
   )
     .then((qaData) => {
-      if (qaData) {
+      if (!qaData) {
         res.status(404).json({ message: "No QA agent found" });
         return;
       }
