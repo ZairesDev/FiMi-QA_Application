@@ -40,7 +40,7 @@ router.get("/:id", (req, res) => {
       "language",
       "group",
       "employee_supervisor_id",
-      "qa_agent",
+      "qaAgent_id",
     ],
   })
 
