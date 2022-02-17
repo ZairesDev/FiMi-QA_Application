@@ -16,4 +16,22 @@
     </div>
 </post>
 
+{{#if loggedIn}}
+<comment class="media">
+    <figure class="media-left">
+        <p class="image is-128x128">
+            <img id= 'post-pic'src="">
+        </p>
+    </figure>
+    <div class="media-content">
+        <form class="control">
+            <textarea class="textarea" placeholder="Add a comment"></textarea>
+        </form>
+        <nav class="level">
+            <button class="button is-info">Submit</button>
+        </nav>
+    </div>
+</comment>
+{{/if}}
+
 <script src="/public/js/comment-post.js"></script>

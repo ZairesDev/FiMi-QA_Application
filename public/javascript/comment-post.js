@@ -26,7 +26,7 @@ onload = catGenerator(catPics);
 
 function catGenerator(catPics) {
     let randomCat = Math.floor(Math.random() * catPics.length);
-    document.querySelector('#comment-pic').src = catPics[randomCat];
+    document.querySelectorAll('#post-pic').src = catPics[randomCat];
 }
 
 commentBtn.addEventListener('click', function() {
