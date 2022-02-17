@@ -32,7 +32,7 @@ const QaData = [
     agent_number: 8888,
     site: "Tyler",
     language: "ENG",
-    qaSuper_id: 3,
+    qaSuper_id: 2,
     username: "cat123",
     email: "cat123@gmail.com",
     password: "soup1234",

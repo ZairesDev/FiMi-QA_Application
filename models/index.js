@@ -46,8 +46,14 @@ QaSuper.belongsToMany(QaAgent, {
   through: EmployeeTracker,
   as: `qaSuper_id`,
   foreignKey: `qaSuper_id`,
-  onDelete: `SET NULL`,
+  onDelete: `CASCADE`,
 });
+// QaAgent.belongsTo(QaSuper, {
+//   through: EmployeeTracker,
+
+//   foreignKey: `qaAgent_id`,
+//   onDelete: `CASCADE`,
+// });
 
 module.exports = {
   QaSuper,
