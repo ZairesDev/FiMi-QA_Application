@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Employee } = require("../models");
+const { Employee, EmployeeSuper } = require("../models");
 
 router.get("/", (req, res) => {
   Employee.findAll({
