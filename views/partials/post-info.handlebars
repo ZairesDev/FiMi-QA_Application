@@ -2,13 +2,13 @@
     <figure class="media-left">
         <p class="image is-128x128">
             <img id="post-pic"
-                src="https://nomorsiapa.com/images/v/th/id/OIP.qpt2eFvQWlaI5SlyN8RO1QHaFf?w=241&h=180&c=7&r=0&o=5&pid=1.7">
+                src="">
         </p>
     </figure>
     <div class="media-content">
         <div class="content">
             <p>
-                <strong>{{user.username}}</strong> <small>@poster</small> <small>{{format_date created_at}}</small>
+                <strong>{{qasuper.username}}</strong> <small>{{format_date created_at}}</small>
                 <br>
             <p>{{post_text}}</p>
             </p>
@@ -16,4 +16,26 @@
     </div>
 </post>
 
-<script src="/public/js/comment-post.js"></script>
+{{#if loggedIn}}
+<comment class="media">
+    <figure class="media-left">
+        <p class="image is-128x128">
+            <img id="comment-pic"src="">
+        </p>
+    </figure>
+    <div class="media-content">
+        <form class="control">
+            <textarea class="textarea" placeholder="Add a comment"></textarea>
+        </form>
+        <nav class="level">
+            <button class="button is-info">Submit</button>
+        </nav>
+    </div>
+</comment>
+
+<script src="/public/js/add-post"></script>
+<script src="/public/js/delete-post"></script>
+<script src="/public/js/edit-post"></script>
+{{/if}}
+
+<script src="/public/javascript/comment-post.js"></script>

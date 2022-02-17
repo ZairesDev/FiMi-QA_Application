@@ -1,4 +1,4 @@
-const XLSX = require('xlsx')
+var XLSX = require("xlsx");
 
 const btn = document.querySelector('#downloadButton');
 

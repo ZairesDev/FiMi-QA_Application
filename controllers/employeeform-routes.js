@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Employee } = require("../models");
+const { Employee, EmployeeSuper } = require("../models");
 
 router.get("/", (req, res) => {
   Employee.findAll({
@@ -69,23 +69,22 @@ router.post("/", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
-  Employee.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((employeeData) => {
-      if (!employeeData) {
-        res.status(404).json({ message: "No employee found" });
-        return;
-      }
-      res.json(employeeData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
+router.put("/:id", async (req, res) => {
+  try {
+    const employeeData = await Employee.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
     });
+    if (!employeeData) {
+      res.status(404).json({ message: "No employee found" });
+      return;
+    }
+    res.json(employeeData);
+  } catch (error) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.delete("/:id", (req, res) => {

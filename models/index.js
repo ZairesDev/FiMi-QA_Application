@@ -1,16 +1,16 @@
+const EmployeeTracker = require(`./EmployeeTracker`);
 const QaSuper = require(`./QaSuper`);
 const QaAgent = require(`./QaAgent`);
 const EmployeeSuper = require(`./EmployeeSuper`);
 const Employee = require(`./Employee`);
-const EmployeeTracker = require(`./EmployeeTracker`);
 const Post = require(`./Post`);
 
-// Employee.belongsTo(QaAgent, {
-//   through: EmployeeTracker,
-//   as: `CSR Count`,
-//   foreignKey: `qaAgent_id`,
-//   onDelete: `CASCADE`,
-// });
+Employee.belongsTo(QaAgent, {
+  through: EmployeeTracker,
+  as: `CSR Count`,
+  foreignKey: `qaAgent_id`,
+  onDelete: `CASCADE`,
+});
 
 QaAgent.belongsToMany(Employee, {
   through: EmployeeTracker,

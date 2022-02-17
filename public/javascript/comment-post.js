@@ -19,16 +19,16 @@ let catPics = ['https://nomorsiapa.com/images/v/th/id/OIP.6ZK7C_vrhQryClBmmL1ZFQ
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJYZomu4wd1n5FYr8Oh7o1cr9ekpgepuMXew&usqp=CAU'
 ]
 
-let commentBtn = document.querySelector('.is-info')
-
+let commentBtn = document.querySelector('.is-info');
 
 onload = catGenerator(catPics);
 
 function catGenerator(catPics) {
     let randomCat = Math.floor(Math.random() * catPics.length);
+    document.querySelector('#post-pic').src = catPics[randomCat];
     document.querySelector('#comment-pic').src = catPics[randomCat];
 }
 
 commentBtn.addEventListener('click', function() {
-    catGenerator(catPics)
+    catGenerator(catPics);
 })

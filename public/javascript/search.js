@@ -1,33 +1,61 @@
-let all = document.querySelector('.allSearch')
-let qaAgent = document.querySelector('.qaAgentSearch');
-let emp = document.querySelector('.employeeSearch');
-let empName = document.querySelector('.empNameSearch');
+const employeeCard = document.querySelector('#employeeCard');
+const searchBar = document.querySelector('#searchBar');
+let data = [];
 
+const fetchEmployees = async () => {
+  try {
+    const res = await fetch('/api/employees');
 
-all.addEventListener('click', () => {
-    all.classList.add('is-active')
-    qaAgent.classList.remove('is-active')
-    emp.classList.remove('is-active')
-    empName.classList.remove('is-active')
-})
+    data = await res.json();
+    mapEmployee(data);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
-qaAgent.addEventListener('click', () => {
-    all.classList.remove('is-active')
-    qaAgent.classList.add('is-active')
-    emp.classList.remove('is-active')
-    empName.classList.remove('is-active')
-})
+const mapEmployee = (employees) => {
+  const cardContent = employees
+    .map((employee) => {
+      return `
+        <div class="card card-margin is-flex">
+            <div class="media-content has-text-centered">
+                <p class="title is-4">${employee.first_name}</p>
+                <p class="subtitle has-text-weight-bold is-6">${employee.last_name}</p>
+            </div>
+                <ul id="employeeCard" class="is-flex is-justify-content-space-around is-flex-direction-column has-text-centered">
+                    <li>Number: ${employee.employee_number}</li>
+                    <li>Site: ${employee.site}</li>
+                    <li>Role: ${employee.role}</li>
+                    <li>Language: ${employee.language}</li>
+                    <li>Group: ${employee.group}</li>
+                    <li>Supervisor ID:${employee.employeesuper_id}</li>
+                    <li>QA Agent ID: ${employee.qaAgent_id}</li>
+                </ul>
+            </div>
+        </div>
+            <br>
+        `;
+    })
+    .join('');
+  console.log(employees);
+  employeeCard.innerHTML = cardContent;
+};
 
-emp.addEventListener('click', () => {
-    all.classList.remove('is-active')
-    qaAgent.classList.remove('is-active')
-    emp.classList.add('is-active')
-    empName.classList.remove('is-active')
-})
+searchBar.addEventListener('keyup', (e) => {
+  console.log(e.target.value);
+  const searchValue = e.target.value.toLowerCase();
 
-empName.addEventListener('click', () => {
-    all.classList.remove('is-active')
-    qaAgent.classList.remove('is-active')
-    emp.classList.remove('is-active')
-    empName.classList.add('is-active')
-})
+  const searchFilters = data.filter((employee) => {
+    return (
+      employee.first_name.toLowerCase().includes(searchValue) ||
+      employee.last_name.toLowerCase().includes(searchValue) ||
+      employee.site.toLowerCase().includes(searchValue) ||
+      employee.role.toLowerCase().includes(searchValue) ||
+      employee.language.toLowerCase().includes(searchValue) ||
+      employee.group.toLowerCase().includes(searchValue)
+    );
+  });
+  mapEmployee(searchFilters);
+});
+
+fetchEmployees();
