@@ -47,6 +47,7 @@ QaAgent.init(
         key: `id`,
       },
     },
+
     username: {
       type: DataTypes.STRING,
       allowNull: false,
