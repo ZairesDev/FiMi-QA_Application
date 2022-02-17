@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
       "role",
       "language",
       "group",
-      "employee_supervisor_id",
+      "employeesuper_id",
       "qaAgent_id",
     ],
   })
@@ -37,7 +37,7 @@ router.get("/:id", (req, res) => {
       "role",
       "language",
       "group",
-      "employee_supervisor_id",
+      "employeesuper_id",
       "qaAgent_id",
     ],
   })
@@ -58,7 +58,7 @@ router.post("/", (req, res) => {
       role: req.body.role,
       language: req.body.language,
       group: req.body.group,
-      employee_supervisor_id: req.body.employee_supervisor_id,
+      employeesuper_id: req.body.employeesuper_id,
       qaAgent_id: req.body.qaAgent_id,
     })
       .then((employeeData) => res.json(employeeData))
