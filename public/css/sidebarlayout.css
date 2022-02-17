@@ -19,11 +19,10 @@ body::-webkit-scrollbar-thumb {
 
 main {
     margin-left: 5rem;
-    background: #F5F0F6;
 }
 
-.title,
-.subtitle {
+#p-title,
+#s-title {
     color: #fff;
     background: #8377D1;
     width: 100%;

@@ -81,3 +81,20 @@ tr:nth-child(even) {
         font-size: 10px;
     }
 }
+
+
+/* Employee Card for Search Page */
+
+.media-content {
+    overflow: hidden;
+}
+
+.card-margin {
+    margin: 0px 50px 50px 50px;
+}
+
+@media (max-width: 738px) {
+    .card-margin {
+        margin: 10px 10px;
+    }
+}
