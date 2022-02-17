@@ -1,6 +1,5 @@
 const router = require("express").Router();
-const { response } = require("express");
-const sequelize = require("../config/connection");
+
 const { Employee } = require("../models");
 
 router.get("/", (req, res) => {
@@ -14,8 +13,8 @@ router.get("/", (req, res) => {
       "role",
       "language",
       "group",
-      "employee_supervisor_id",
-      "qa_agent",
+      "employeesuper_id",
+      "qaAgent_id",
     ],
   })
     .then(res.render("dashboard", { loggedIn: req.session.loggedIn }))
@@ -39,7 +38,7 @@ router.get("/:id", (req, res) => {
       "role",
       "language",
       "group",
-      "employee_supervisor_id",
+      "employeesuper_id",
       "qaAgent_id",
     ],
   })
