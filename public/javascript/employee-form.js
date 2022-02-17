@@ -26,7 +26,7 @@ const addEmployeeFormHandler = async (event) => {
     }),
     headers: { 'Content-Type': 'application/json' },
   });
-  if (response) {
+  if (response.ok) {
     document.location(`/dashboard`);
   } else {
     alert(response.statusText);
