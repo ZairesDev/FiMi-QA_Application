@@ -22,7 +22,7 @@ Post.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: `loggeduser`,
+        model: `qasuper`,
         key: `id`,
       },
     },

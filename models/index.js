@@ -4,7 +4,6 @@ const QaAgent = require(`./QaAgent`);
 const EmployeeSuper = require(`./EmployeeSuper`);
 const Employee = require(`./Employee`);
 const Post = require(`./Post`);
-const loggedUser = require("./loggedUser");
 
 Employee.belongsTo(QaAgent, {
   through: EmployeeTracker,
@@ -50,13 +49,13 @@ QaSuper.belongsToMany(QaAgent, {
   onDelete: `CASCADE`,
 });
 
-loggedUser.belongsToMany(Post, {
+QaSuper.belongsToMany(Post, {
   through: EmployeeTracker,
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
 
-Post.belongsTo(loggedUser, {
+Post.belongsTo(QaSuper, {
   through: EmployeeTracker,
   foreignKey: "user_id",
   onDelete: "CASCADE",
@@ -69,5 +68,4 @@ module.exports = {
   Employee,
   EmployeeTracker,
   Post,
-  loggedUser,
 };

@@ -55,7 +55,7 @@ EmployeeTracker.init(
       type: DataTypes.INTEGER,
       // allowNull: false,
       references: {
-        model: `loggeduser`,
+        model: `qasuper`,
         key: `id`,
       },
     },

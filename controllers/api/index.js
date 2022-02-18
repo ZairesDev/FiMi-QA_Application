@@ -6,9 +6,7 @@ const qaRoutes = require("./qaAgent-routes");
 const qaSupRoutes = require("./qaSup-routes");
 const postRoutes = require("./post-routes");
 const empSupRoutes = require("./empSup-routes");
-const userRoutes = require("./loggedUser-routes");
 
-router.use("/users", userRoutes);
 router.use("/employees", empRoutes);
 router.use("/qa", qaRoutes);
 router.use("/posts", postRoutes);
