@@ -41,11 +41,10 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   loggedUser
     .create({
       username: req.body.username,
-      email: req.body.email,
       password: req.body.password,
     })
     .then((dbUserData) => {
@@ -70,6 +69,7 @@ router.post("/login", async (req, res) => {
         username: req.body.username,
       },
     })
+
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(400).json({ message: "No user with that email address!" });
