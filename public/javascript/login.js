@@ -5,7 +5,7 @@ async function loginFormHandler(e) {
   const password = document.querySelector("#password-login").value.trim();
 
   if (username && password) {
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("/api/qa/login", {
       method: "post",
       body: JSON.stringify({
         username,
@@ -15,10 +15,20 @@ async function loginFormHandler(e) {
     });
 
     if (response.ok) {
-      console.log("success");
       document.location.replace("/");
-    } else {
-      alert(response.statusText);
+    } else if (!response.ok) {
+      const secondresponse = await fetch("/api/qasup/login", {
+        method: "post",
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      if (secondresponse.ok) {
+        document.location.replace("/");
+      }
     }
   }
 }

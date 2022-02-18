@@ -18,7 +18,6 @@ const QaSuperData = [
     language: "English",
     site: "San Antonio",
     username: "chair123",
-    email: "rosa123@gmail.com",
     password: "rosa123",
   },
 ];

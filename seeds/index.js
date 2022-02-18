@@ -4,7 +4,6 @@ const seedPosts = require("./posts.seeds");
 const seedQa = require("./qaAgent-seeds");
 const seedQaSup = require("./qaSup-seeds");
 const sequelize = require("../config/connection");
-const seedusers = require("./loggeduser-seeds");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -16,8 +15,6 @@ const seedAll = async () => {
   await seedEmpSup();
   console.log("--------------");
   await seedPhoneSatff();
-  console.log("--------------");
-  await seedusers();
   console.log("--------------");
   await seedPosts();
   console.log("--------------");

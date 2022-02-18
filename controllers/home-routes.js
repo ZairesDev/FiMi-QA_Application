@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Post, loggedUser } = require("../models");
+const { Post, QaSuper } = require("../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
     attributes: ["id", "post_text", "created_at"],
     include: [
       {
-        model: loggedUser,
+        model: QaSuper,
 
         attributes: ["username"],
       },
@@ -36,7 +36,7 @@ router.get("/post/:id", (req, res) => {
     include: [
       {
         include: {
-          model: loggedUser,
+          model: QaSuper,
 
           attributes: ["username"],
         },

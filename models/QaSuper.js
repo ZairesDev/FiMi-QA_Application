@@ -4,7 +4,7 @@ const bcrypt = require(`bcrypt`);
 
 class QaSuper extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+    return loginPw, this.password;
   }
 }
 
@@ -54,24 +54,24 @@ QaSuper.init(
     },
   },
   {
-    hooks: {
-      // set up beforeCreate lifecycle 'hook' functionality
-      async beforeCreate(newQaSuperData) {
-        newQaSuperData.password = await bcrypt.hash(
-          newQaSuperData.password,
-          10
-        );
-        return newQaSuperData;
-      },
-      // set up beforeUpdate lifecycle 'hook' functionality
-      async beforeUpdate(updatedQaSuperData) {
-        updatedQaSuperData.password = await bcrypt.hash(
-          updatedQaSuperData.password,
-          10
-        );
-        return updatedQaSuperData;
-      },
-    },
+    // hooks: {
+    //   // set up beforeCreate lifecycle 'hook' functionality
+    //   async beforeCreate(newQaSuperData) {
+    //     newQaSuperData.password = await bcrypt.hash(
+    //       newQaSuperData.password,
+    //       10
+    //     );
+    //     return newQaSuperData;
+    //   },
+    //   // set up beforeUpdate lifecycle 'hook' functionality
+    //   async beforeUpdate(updatedQaSuperData) {
+    //     updatedQaSuperData.password = await bcrypt.hash(
+    //       updatedQaSuperData.password,
+    //       10
+    //     );
+    //     return updatedQaSuperData;
+    //   },
+    // },
     sequelize,
     timestamps: false,
     freezeTableName: true,
