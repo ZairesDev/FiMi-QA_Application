@@ -2,7 +2,7 @@
   <table class='table has-text-centered is-bordered'>
     <thead>
       <tr>
-        <th class='is-dark'>Num</th>
+        <th class='is-dark'></th>
         <th class='is-dark'>First Name</th>
         <th class='is-dark'>Last Name</th>
         <th class='is-dark'>Employee Number</th>
@@ -10,147 +10,18 @@
         <th class='is-dark'>Role</th>
         <th class='is-dark'>Language</th>
         <th class='is-dark'>Group</th>
-        <th class='is-dark'>SuperVisor</th>
+        <th class='is-dark'>Supervisor</th>
         <th class='is-dark'>QA Agent</th>
       </tr>
     </thead>
+    {{#if employees.length}}
     <tbody>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>Lorde Swift</th>
-        <th>John Boss</th>
-        <th>Jack Love</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>Lorde Swift</th>
-        <th>John Boss</th>
-        <th>Jack Love</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
-      <tr>
-        <th>1</th>
-        <th>Bob</th>
-        <th>Tester</th>
-        <th>123456</th>
-        <th>Moon</th>
-        <th>CSR</th>
-        <th>English</th>
-        <th>A</th>
-        <th>John Boss</th>
-        <th>Lorde Swift</th>
-      </tr>
+      {{#each employees as |employee|}}
+      {{> employee-table employee}}
     </tbody>
+    {{/each}}
   </table>
+  {{/if}}
   <li class='is-flex is-justify-content-center'>
     <button class='button table-one-button is-flex is-dark'>Download</button>
   </li>
