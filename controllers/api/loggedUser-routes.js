@@ -63,7 +63,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
   loggedUser
     .findOne({
       where: {
@@ -75,15 +75,17 @@ router.post("/login", (req, res) => {
         res.status(400).json({ message: "No user with that email address!" });
         return;
       }
-
+      console.log(dbUserData);
       const validPassword = dbUserData.checkPassword(req.body.password);
 
       if (!validPassword) {
         res.status(400).json({ message: "Incorrect password!" });
         return;
       }
+
       req.session.save(() => {
         req.session.id = dbUserData.id;
+
         req.session.username = dbUserData.username;
 
         req.session.loggedIn = true;
