@@ -1,11 +1,12 @@
-var XLSX = require("xlsx");
+const tableData = document.querySelector(".table");
 
-const btn = document.querySelector('#downloadButton');
+makeXSLX = () => {
+    //Converts the HTML Table to Excel data
+    let tableToExcelData = XLSX.utils.table_to_book(tableData);
 
-let tableImport = XLSX.table_to_book(document.querySelector('.table-name'), { sheet: 'Test' });
+    // This is create a sheet 
+    let ws = tableToExcelData.Sheets["Sheet1"];
 
-const tableExport = XLSX.write(tableImport, { bookType: 'xlsx', bookSST: true, type: 'binary' });
-
-btn.addEventListener(click, function() {
-    return XLSX.writeFile(tableExport, 'xlsx/result.xlsx')
-})
+    //Works nearly the same as file system writeFile
+    XLSX.writeFile(tableToExcelData, "Test.xlsx");
+}

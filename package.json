@@ -32,7 +32,6 @@
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
     "sequelize": "^6.16.1",
-    "sheetjs": "^2.0.0",
-    "xlsx": "^0.18.2"
+    "sheetjs": "^2.0.0"
   }
 }
