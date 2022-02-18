@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const { Post, QaSuper } = require("../../models");
+const { Post, loggedUser } = require("../../models");
 
 router.get("/", (req, res) => {
   Post.findAll({
     attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
-        model: QaSuper,
+        model: loggedUser,
         attributes: ["username"],
       },
     ],
@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
     attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
-        model: QaSuper,
+        model: loggedUser,
         attributes: ["username"],
       },
     ],
