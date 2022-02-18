@@ -6,7 +6,7 @@ const postData = [
     title: "Remember Greeting!",
     post_text:
       "Please ensure your audited staff are using the correct greeting when answering the calls!",
-    qaSuper_id: 1,
+    user_id: 1,
   },
 ];
 const seedposts = () => Post.bulkCreate(postData);

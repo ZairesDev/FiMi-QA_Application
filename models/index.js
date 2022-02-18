@@ -50,8 +50,16 @@ QaSuper.belongsToMany(QaAgent, {
   onDelete: `CASCADE`,
 });
 
-loggedUser.hasMany(Post, {
+loggedUser.belongsToMany(Post, {
+  through: EmployeeTracker,
   foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+
+Post.belongsTo(loggedUser, {
+  through: EmployeeTracker,
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
 
 module.exports = {

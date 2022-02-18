@@ -17,10 +17,11 @@ const seedAll = async () => {
   console.log("--------------");
   await seedPhoneSatff();
   console.log("--------------");
-  await seedPosts();
-  console.log("--------------");
   await seedusers();
   console.log("--------------");
+  await seedPosts();
+  console.log("--------------");
+
   process.exit(0);
 };
 
