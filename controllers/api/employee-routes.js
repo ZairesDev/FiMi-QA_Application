@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const { Employee } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/", (req, res) => {
   Employee.findAll({
@@ -51,7 +52,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   if (req.session) {
     Employee.create({
       first_name: req.body.first_name,
@@ -63,6 +64,7 @@ router.post("/", (req, res) => {
       group: req.body.group,
       employeesuper_id: req.body.employeesuper_id,
       qaAgent_id: req.body.qaAgent_id,
+      qasup: req.body.qasup,
     })
       .then((employeeData) => res.json(employeeData))
       .catch((err) => {
@@ -72,7 +74,7 @@ router.post("/", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Employee.update(req.body, {
     where: {
       id: req.params.id,

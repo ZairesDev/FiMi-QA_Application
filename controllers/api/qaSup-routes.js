@@ -108,11 +108,11 @@ router.post("/login", (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.id = qaData.id;
+      req.session.qasup = qaData.qasup;
       req.session.username = qaData.username;
       req.session.loggedIn = true;
 
-      res.json({ QaSuper: qaData, message: "You are now logged in!" });
+      res.json({ qasup: qaData, message: "You are now logged in!" });
     });
   });
 });

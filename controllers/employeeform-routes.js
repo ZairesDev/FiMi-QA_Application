@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Employee, EmployeeSuper } = require("../models");
+const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
   Employee.findAll({
@@ -60,6 +61,7 @@ router.post("/", (req, res) => {
       group: req.body.group,
       employeesuper_id: req.body.employeesuper_id,
       qaAgent_id: req.body.qaAgent_id,
+      qasup: req.body.qasup,
     })
       .then((employeeData) => res.json(employeeData))
       .catch((err) => {

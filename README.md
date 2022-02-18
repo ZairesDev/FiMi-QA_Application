@@ -6,11 +6,25 @@
 
 - We know the importance of employee tracking to QA department. We’re here to give a simple solution to such a tedious task.
 
-  -Easily track all monitored employees,
-  -Assign and edit QA to frontline staff relationships,
-  -Employee database driven allowing for automatic new hire and attrition updates,
-  -Reduces manual input and editing,
-  -Reduces time spent on data entry
+## Usage
+
+- Easily track all monitored employees,
+- Assign and edit QA to frontline staff relationships,
+- Employee database driven allowing for automatic new hire and attrition updates,
+- Reduces manual input and editing,
+- Reduces time spent on data entry
+
+## Testing
+
+Use one of the following to login into application:
+
+- QA Agent login information for testing:
+  username: sam123,
+  password: password: cats123
+
+- QA Supervisor login information for testing:
+  username: chair123,
+  password: rosa123,
 
 ## User Story
 
@@ -42,17 +56,13 @@
 - WHEN I am done editing the QA Roster for the week as a QA Supervisor I can choose to export the roster to an Excel spreadsheet so I can share with other departments.
 - WHEN I as a QA Supervisor or agent click on “signout” I am logged out of the application and taken back to the login page.
 
-### Wireframe
+![screenshot of edit screen](/images/editemp.jpeg)
 
-- <img width="1024" alt="Screen Shot 2022-02-08 at 8 01 47 PM" src="https://user-images.githubusercontent.com/92201576/153107725-41f362da-b415-4a70-b895-23d1b2a18e42.png">
+![screenshot of full QA roster](/images/spreadsheet.jpeg)
 
-- <img width="1024" alt="Screen Shot 2022-02-08 at 8 02 42 PM" src="https://user-images.githubusercontent.com/92201576/153107878-83515ddd-cf2a-40a8-9d4c-cb66d7c9e146.png">
+![screenshot of export](/images/export.jpeg)
 
-- <img width="1027" alt="Screen Shot 2022-02-08 at 7 58 59 PM" src="https://user-images.githubusercontent.com/92201576/153107475-2a8d0753-16ba-4bad-be9f-f698ffc5c914.png">
-
-- <img width="1027" alt="Screen Shot 2022-02-08 at 8 04 40 PM" src="https://user-images.githubusercontent.com/92201576/153108001-ceaf059d-65ec-43b9-a40a-0fa142b79fc1.png">
-
-- <img width="1023" alt="Screen Shot 2022-02-08 at 8 04 53 PM" src="https://user-images.githubusercontent.com/92201576/153108032-732f1dbb-c8fd-40f5-8e88-da22d6b92bef.png">
+![screenshot of search screen](/images/search.jpeg)
 
 ## Link to Heroku Deployed Application
 
