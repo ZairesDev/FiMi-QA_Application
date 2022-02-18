@@ -16,26 +16,24 @@
   </div>
 </post>
 
-{{#if loggedIn}}
-  <comment class="media">
-    <figure class="media-left">
-      <p class="image is-128x128">
-        <img id="comment-pic" src="" />
-      </p>
-    </figure>
-    <div class="media-content">
-      <form class="control">
-        <textarea class="textarea" placeholder="Add a comment"></textarea>
-      </form>
-      <nav class="level">
-        <button class="button is-info">Submit</button>
-      </nav>
-    </div>
-  </comment>
+<comment class="media">
+  <figure class="media-left">
+    <p class="image is-128x128">
+      <img id="comment-pic" src="" />
+    </p>
+  </figure>
+  <div class="media-content">
+    <form class="control">
+      <textarea class="textarea" placeholder="Add a comment"></textarea>
+    </form>
+    <nav class="level">
+      <button class="button is-info">Submit</button>
+    </nav>
+  </div>
+</comment>
 
-  <script src="/public/js/add-post"></script>
-  <script src="/public/js/delete-post"></script>
-  <script src="/public/js/edit-post"></script>
-{{/if}}
+<script src="/js/add-post"></script>
+<script src="/js/delete-post"></script>
+<script src="/js/edit-post"></script>
 
-<script src="/public/javascript/comment-post.js"></script>
+<script src="/javascript/comment-post.js"></script>

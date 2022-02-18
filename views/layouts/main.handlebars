@@ -1,92 +1,114 @@
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.css">
-    <link rel="stylesheet" href="/public/css/sidebarlayout.css">
-    <link rel="stylesheet" href="/public/css/empinfo.css">
-    <link rel="stylesheet" href="/public/css/signup-login.css">
-    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/css/bulma.css" />
+    <link rel="stylesheet" href="/css/sidebarlayout.css" />
+    <link rel="stylesheet" href="/css/empinfo.css" />
+    <link rel="stylesheet" href="/css/signup-login.css" />
     <title>FiMi - Quality Assurance</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar">
-        <ul class="navbar-list">
-            <li id="homeButton" class="nav-button">
-                <a href="/" class="nav-link">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
-                    </svg>
-                    <span class="link-text">Home</span>
-                </a>
-            </li>
-            <li id="loginButton" class="nav-button" width="100%">
-                <a href="/login" class="nav-link">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M19,3H5C3.89,3 3,3.89 3,5V9H5V5H19V19H5V15H3V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10.08,15.58L11.5,17L16.5,12L11.5,7L10.08,8.41L12.67,11H3V13H12.67L10.08,15.58Z" />
-                    </svg>
-                    <span class="link-text">Login</span>
-                </a>
-            </li>
-            {{#if loggedIn}}
-            <li id="addEmpButton" class="nav-button" width="100%">
-                <a href="/form" class="nav-link">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z" />
-                    </svg>
-                    <span class="link-text">Add Employee</span>
-                </a>
-            </li>
-            <li id="viewTableButton" class="nav-button" width="100%">
-                <a href="/dashboard" class="nav-link">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M19,11V9H11V5H9V9H5V11H9V19H11V11H19M19,3C19.5,3 20,3.2 20.39,3.61C20.8,4 21,4.5 21,5V19C21,19.5 20.8,20 20.39,20.39C20,20.8 19.5,21 19,21H5C4.5,21 4,20.8 3.61,20.39C3.2,20 3,19.5 3,19V5C3,4.5 3.2,4 3.61,3.61C4,3.2 4.5,3 5,3H19Z" />
-                    </svg>
-                    <span class="link-text">View Spread Sheet</span>
-                </a>
-            </li>
-            <li id="searchEmpButton" class="nav-button" width="100%">
-                <a href="/search" class="nav-link">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
-                    </svg>
-                    <span class="link-text">Search Employee</span>
-                </a>
-            </li>
-            <li id="logoutButton" class="nav-button" width="100%">
-                <a href="#" class="nav-link">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M14.08,15.59L16.67,13H7V11H16.67L14.08,8.41L15.5,7L20.5,12L15.5,17L14.08,15.59M19,3A2,2 0 0,1 21,5V9.67L19,7.67V5H5V19H19V16.33L21,14.33V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19Z" />
-                    </svg>
-                    <span class="link-text">Sign Out</span>
-                </a>
-            </li>
-            {{/if}}
-            <li id="backButton" class="nav-button" width="100%">
-                <a href="#" class="nav-link">
-                    <svg viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" />
-                    </svg>
-                    <span class="link-text">Back</span>
-                </a>
-            </li>
-        </ul>
+      <ul class="navbar-list">
+        <li id="homeButton" class="nav-button">
+          <a href="/" class="nav-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"
+              ></path>
+            </svg>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+
+        {{#if loggedIn}}
+          <li id="addEmpButton" class="nav-button" width="100%">
+            <a href="/form" class="nav-link">
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z"
+                ></path>
+              </svg>
+              <span class="link-text">Add Employee</span>
+            </a>
+          </li>
+          <li id="viewTableButton" class="nav-button" width="100%">
+            <a href="/dashboard" class="nav-link">
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M19,11V9H11V5H9V9H5V11H9V19H11V11H19M19,3C19.5,3 20,3.2 20.39,3.61C20.8,4 21,4.5 21,5V19C21,19.5 20.8,20 20.39,20.39C20,20.8 19.5,21 19,21H5C4.5,21 4,20.8 3.61,20.39C3.2,20 3,19.5 3,19V5C3,4.5 3.2,4 3.61,3.61C4,3.2 4.5,3 5,3H19Z"
+                ></path>
+              </svg>
+              <span class="link-text">View Spread Sheet</span>
+            </a>
+          </li>
+          <li id="searchEmpButton" class="nav-button" width="100%">
+            <a href="/search" class="nav-link">
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+                ></path>
+              </svg>
+              <span class="link-text">Search Employee</span>
+            </a>
+          </li>
+          <li id="logoutButton" class="nav-button" width="100%">
+            <a href="#" class="nav-link">
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M14.08,15.59L16.67,13H7V11H16.67L14.08,8.41L15.5,7L20.5,12L15.5,17L14.08,15.59M19,3A2,2 0 0,1 21,5V9.67L19,7.67V5H5V19H19V16.33L21,14.33V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H19Z"
+                ></path>
+              </svg>
+              <span class="link-text">Sign Out</span>
+            </a>
+          </li>
+        {{else}}
+          <li id="loginButton" class="nav-button" width="100%">
+            <a href="/login" class="nav-link">
+              <svg viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M19,3H5C3.89,3 3,3.89 3,5V9H5V5H19V19H5V15H3V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10.08,15.58L11.5,17L16.5,12L11.5,7L10.08,8.41L12.67,11H3V13H12.67L10.08,15.58Z"
+                ></path>
+              </svg>
+              <span class="link-text">Login</span>
+            </a>
+          </li>
+        {{/if}}
+        <li id="backButton" class="nav-button" width="100%">
+          <a href="#" class="nav-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"
+              ></path>
+            </svg>
+            <span class="link-text">Back</span>
+          </a>
+        </li>
+      </ul>
     </nav>
-    {{!-- ALL CONTENT WILL GO UNDER THE TITLE --}}
-    <main class="is-flex is-justify-content-center is-align-items-center is-flex-direction-column">
-        <h1 id="p-title" class="title">FiMi</h1>
-        <h2 id="s-title" class="subtitle">Making Quality Assurance Easy</h2>
-        {{{ body }}}
+    {{! ALL CONTENT WILL GO UNDER THE TITLE }}
+    <main
+      class="is-flex is-justify-content-center is-align-items-center is-flex-direction-column"
+    >
+      <h1 id="p-title" class="title">FiMi</h1>
+      <h2 id="s-title" class="subtitle">Making Quality Assurance Easy</h2>
+      {{{body}}}
+
+      {{#if loggedIn}}
+        <script src="/javascript/logout.js"></script>
+      {{/if}}
     </main>
-</body>
+  </body>
 
 </html>

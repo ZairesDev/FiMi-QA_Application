@@ -41,11 +41,10 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   loggedUser
     .create({
       username: req.body.username,
-      email: req.body.email,
       password: req.body.password,
     })
     .then((dbUserData) => {
@@ -63,27 +62,30 @@ router.post("/", (req, res) => {
     });
 });
 
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
   loggedUser
     .findOne({
       where: {
         username: req.body.username,
       },
     })
+
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(400).json({ message: "No user with that email address!" });
         return;
       }
-
+      console.log(dbUserData);
       const validPassword = dbUserData.checkPassword(req.body.password);
 
       if (!validPassword) {
         res.status(400).json({ message: "Incorrect password!" });
         return;
       }
+
       req.session.save(() => {
         req.session.id = dbUserData.id;
+
         req.session.username = dbUserData.username;
 
         req.session.loggedIn = true;

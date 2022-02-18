@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 class loggedUser extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+    return loginPw, this.password;
   }
 }
 loggedUser.init(
@@ -19,14 +19,6 @@ loggedUser.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -36,17 +28,17 @@ loggedUser.init(
     },
   },
   {
-    hooks: {
-      async beforeCreate(newUser) {
-        newUser.password = await bcrypt.hash(newUser.password, 10);
-        return newUser;
-      },
+    // hooks: {
+    //   // async beforeCreate(newUser) {
+    //   //   newUser.password = await bcrypt.hash(newUser.password, 10);
+    //   //   return newUser;
+    //   // },
 
-      async beforeUpdate(updatedUser) {
-        updatedUser.password = await bcrypt.hash(updatedUser.password, 10);
-        return updatedUser;
-      },
-    },
+    //   async beforeUpdate(updatedUser) {
+    //     updatedUser.password = await bcrypt.hash(updatedUser.password, 10);
+    //     return updatedUser;
+    //   },
+    // },
     sequelize,
     timestamps: false,
     freezeTableName: true,

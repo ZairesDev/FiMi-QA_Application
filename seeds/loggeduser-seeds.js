@@ -4,7 +4,6 @@ const userData = [
   {
     id: 1,
     username: "tired",
-    email: "tired123@gmail.com",
     password: "tired234",
   },
 ];

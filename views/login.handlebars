@@ -28,13 +28,14 @@
   <button class="button sign-form is-primary mb-5" type="submit">Login</button>
 </div>
 </form> }}
-<form class="login-form container">
+<form action="/api/users/login" method="POST" class="login-form container">
 
   <div class="field">
     <label for="username-login" class="label">Username</label>
     <div class="control has-icons-left has-icons-right">
       <input
         class="input is-success"
+        name="username"
         id="username-login"
         type="text"
         placeholder="Enter Username"
@@ -53,6 +54,8 @@
     <div class="control has-icons-left has-icons-right">
       <input
         class="input is-success"
+        ,
+        name="password"
         id="password-login"
         type="text"
         placeholder="Enter Password"
@@ -73,5 +76,5 @@
     >Login</button>
   </div>
 </form>
-<script src="/public/javascript/login"></script>
+<script src="/javascript/login.js"></script>
 {{! <script src="/public/javascript/logout.js"></script> }}
