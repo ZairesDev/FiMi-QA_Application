@@ -4,7 +4,7 @@ makeXSLX = () => {
     //Converts the HTML Table to Excel data
     let tableToExcelData = XLSX.utils.table_to_book(tableData);
 
-    // This is create a sheet 
+    //This creates a sheet to import our data onto 
     let ws = tableToExcelData.Sheets["Sheet1"];
 
     //Works nearly the same as file system writeFile
