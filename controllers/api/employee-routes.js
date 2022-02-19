@@ -1,21 +1,21 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-const { Employee } = require("../../models");
-const withAuth = require("../../utils/auth");
+const { Employee } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   Employee.findAll({
     attributes: [
-      "id",
-      "first_name",
-      "last_name",
-      "employee_number",
-      "site",
-      "role",
-      "language",
-      "group",
-      "employeesuper_id",
-      "qaAgent_id",
+      'id',
+      'first_name',
+      'last_name',
+      'employee_number',
+      'site',
+      'role',
+      'language',
+      'group',
+      'employeesuper_id',
+      'qaAgent_id',
     ],
   })
 
@@ -26,22 +26,22 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
   Employee.findOne({
     where: {
       id: req.params.id,
     },
     attributes: [
-      "id",
-      "first_name",
-      "last_name",
-      "employee_number",
-      "site",
-      "role",
-      "language",
-      "group",
-      "employeesuper_id",
-      "qaAgent_id",
+      'id',
+      'first_name',
+      'last_name',
+      'employee_number',
+      'site',
+      'role',
+      'language',
+      'group',
+      'employeesuper_id',
+      'qaAgent_id',
     ],
   })
 
@@ -52,7 +52,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", withAuth, (req, res) => {
+router.post('/', withAuth, (req, res) => {
   if (req.session) {
     Employee.create({
       first_name: req.body.first_name,
@@ -74,7 +74,7 @@ router.post("/", withAuth, (req, res) => {
   }
 });
 
-router.put("/:id", withAuth, (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Employee.update(req.body, {
     where: {
       id: req.params.id,
@@ -83,7 +83,7 @@ router.put("/:id", withAuth, (req, res) => {
 
     .then((employeeData) => {
       if (!employeeData) {
-        res.status(404).json({ message: "No call rep found" });
+        res.status(404).json({ message: 'No call rep found' });
         return;
       }
       res.json(employeeData);
@@ -94,8 +94,8 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
-  console.log("id", req.params.id);
+router.delete('/:id', (req, res) => {
+  console.log('id', req.params.id);
   Employee.destroy({
     where: {
       id: req.params.id,
@@ -103,7 +103,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((employeeData) => {
       if (!employeeData) {
-        res.status(404).json({ message: "No call rep found with this id" });
+        res.status(404).json({ message: 'No call rep found with this id' });
         return;
       }
       res.json(employeeData);

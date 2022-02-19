@@ -1,5 +1,4 @@
 const router = require('express').Router();
-
 const { Employee } = require('../models');
 
 router.get('/', (req, res) => {
@@ -17,7 +16,6 @@ router.get('/', (req, res) => {
       'qaAgent_id',
     ],
   })
-    // .then(res.render('spreadsheet', { loggedIn: req.session.loggedIn }))
     .then((response) => {
       const employees = response.map((employee) => {
         return {
@@ -38,7 +36,6 @@ router.get('/', (req, res) => {
         loggedIn: req.session.loggedIn,
       });
     })
-
     .catch((err) => {
       res.status(500).json(err);
     });
@@ -62,9 +59,7 @@ router.get('/:id', (req, res) => {
       'qaAgent_id',
     ],
   })
-
     .then(res.render('spreadsheet', { loggedIn: req.session.loggedIn }))
-
     .catch((err) => {
       res.status(500).json(err);
     });

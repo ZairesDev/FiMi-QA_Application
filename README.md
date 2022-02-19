@@ -73,6 +73,8 @@ Use one of the following to login into application:
 - JavaScript
 - Node.js
 - NPM
+- Express.js
+- Dotenv
 - Nodemailer
 - Socket.io
 - Sequelize

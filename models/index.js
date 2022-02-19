@@ -33,15 +33,6 @@ EmployeeSuper.belongsToMany(Employee, {
   onDelete: "CASCADE",
 });
 
-// Post.belongsTo(QaSuper, {
-//   through: EmployeeTracker,
-//   foreignKey: `id`,
-// });
-
-// QaSuper.hasMany(Post, {
-//   foreignKey: `id`,
-// });
-
 QaSuper.belongsToMany(QaAgent, {
   through: EmployeeTracker,
   as: `qaSuper_id`,

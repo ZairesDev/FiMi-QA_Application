@@ -1,9 +1,9 @@
-const router = require("express").Router();
-const { EmployeeSuper } = require("../../models");
+const router = require('express').Router();
+const { EmployeeSuper } = require('../../models');
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   EmployeeSuper.findAll({
-    attributes: ["id", "first_name", "last_name", "site", "language", "group"],
+    attributes: ['id', 'first_name', 'last_name', 'site', 'language', 'group'],
   })
     .then((employeeData) => res.json(employeeData))
 
@@ -12,12 +12,12 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
   EmployeeSuper.findOne({
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "first_name", "last_name", "site", "language", "group"],
+    attributes: ['id', 'first_name', 'last_name', 'site', 'language', 'group'],
   })
     .then((employeeData) => res.json(employeeData))
 
@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   if (req.session) {
     EmployeeSuper.create({
       first_name: req.body.first_name,
@@ -43,7 +43,7 @@ router.post("/", (req, res) => {
   }
 });
 
-router.put("/:id", (req, res) => {
+router.put('/:id', (req, res) => {
   EmployeeSuper.update(
     {
       first_name: req.body.first_name,
@@ -61,7 +61,7 @@ router.put("/:id", (req, res) => {
   )
     .then((employeeData) => {
       if (employeeData) {
-        res.status(404).json({ message: "No employee found" });
+        res.status(404).json({ message: 'No employee found' });
         return;
       }
       res.json(employeeData);
@@ -72,7 +72,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete('/:id', (req, res) => {
   EmployeeSuper.destroy({
     where: {
       id: req.params.id,
@@ -80,7 +80,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((employeeData) => {
       if (!employeeData) {
-        res.status(404).json({ message: "No employee found" });
+        res.status(404).json({ message: 'No employee found' });
         return;
       }
       res.json(employeeData);

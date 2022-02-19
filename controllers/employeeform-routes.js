@@ -1,55 +1,55 @@
-const router = require("express").Router();
-const { Employee, EmployeeSuper } = require("../models");
-const withAuth = require("../utils/auth");
+const router = require('express').Router();
+const { Employee, EmployeeSuper } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   Employee.findAll({
     attributes: [
-      "id",
-      "first_name",
-      "last_name",
-      "employee_number",
-      "site",
-      "role",
-      "language",
-      "group",
-      "employeesuper_id",
-      "qaAgent_id",
+      'id',
+      'first_name',
+      'last_name',
+      'employee_number',
+      'site',
+      'role',
+      'language',
+      'group',
+      'employeesuper_id',
+      'qaAgent_id',
     ],
   })
-    .then(res.render("empform", { loggedIn: req.session.loggedIn }))
+    .then(res.render('empform', { loggedIn: req.session.loggedIn }))
 
     .catch((err) => {
       res.status(500).json(err);
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
   Employee.findOne({
     where: {
       id: req.params.id,
     },
     attributes: [
-      "id",
-      "first_name",
-      "last_name",
-      "employee_number",
-      "site",
-      "role",
-      "language",
-      "group",
-      "employeesuper_id",
-      "qaAgent_id",
+      'id',
+      'first_name',
+      'last_name',
+      'employee_number',
+      'site',
+      'role',
+      'language',
+      'group',
+      'employeesuper_id',
+      'qaAgent_id',
     ],
   })
-    .then(res.render("empform", { loggedIn: req.session.loggedIn }))
+    .then(res.render('empform', { loggedIn: req.session.loggedIn }))
 
     .catch((err) => {
       res.status(500).json(err);
     });
 });
 
-router.post("/", (req, res) => {
+router.post('/', (req, res) => {
   if (req.session) {
     Employee.create({
       first_name: req.body.first_name,
@@ -71,7 +71,7 @@ router.post("/", (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const employeeData = await Employee.update(req.body, {
       where: {
@@ -79,7 +79,7 @@ router.put("/:id", async (req, res) => {
       },
     });
     if (!employeeData) {
-      res.status(404).json({ message: "No employee found" });
+      res.status(404).json({ message: 'No employee found' });
       return;
     }
     res.json(employeeData);
@@ -89,8 +89,8 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", (req, res) => {
-  console.log("id", req.params.id);
+router.delete('/:id', (req, res) => {
+  console.log('id', req.params.id);
   Employee.destroy({
     where: {
       id: req.params.id,
@@ -98,7 +98,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((employeeData) => {
       if (!employeeData) {
-        res.status(404).json({ message: "No employee found" });
+        res.status(404).json({ message: 'No employee found' });
         return;
       }
       res.json(employeeData);
