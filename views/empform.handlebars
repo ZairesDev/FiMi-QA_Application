@@ -1,11 +1,11 @@
 <form
   action=''
-  class='panel emp-panel has-text-centered is-primary is-flex is-flex-direction-column'
+  class='emp-form emp-update panel emp-panel has-text-centered is-primary is-flex is-flex-direction-column'
+
 >
   <h1 class='panel-heading'>Employee Info</h1>
 
   <ul id='empInfo' class='is-flex is-justify-content-center is-flex-wrap-wrap'>
-
     <li class='not-radio emp-input'>
       <label for='qa-agent'>QA Agent</label>
       <input
@@ -14,7 +14,7 @@
         name='qa-agent'
         id='qaAgentInput'
         placeholder='QA Agent'
-      />
+      ></input>
     </li>
     <li class='not-radio emp-input'>
       <label for='supervisor'>Supervisor</label>
@@ -46,7 +46,6 @@
         placeholder='Last Name'
       />
     </li>
-
     <li class='not-radio emp-input'>
       <label for='emp-id'>Employee Number</label>
       <input
@@ -101,14 +100,13 @@
 
   <ul class='is-flex is-justify-content-center is-flex-wrap-wrap'>
     <li>
-
-      <button class='update-button emp-button is-primary is-normal' type='submit'>Update</button>
+      <button class='emp-button is-primary is-normal' id="update-button" type='click'>Update</button>
     </li>
     <li>
-
-      <button class='add-button emp-button is-primary is-normal' type='submit'>Add</button>
+      <button class='emp-button is-primary is-normal' id="add-button" type='click'>Add</button>
     </li>
   </ul>
 </form>
 
-<script src='/javascript/employee-form.js'></script>
+<script src='../javascript/employee-form.js'></script>
+{{!-- <script src="/public/javascript/employee-form.js" --}}
