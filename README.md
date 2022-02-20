@@ -4,7 +4,7 @@
 
 ## Summary
 
-- [![We know the] importance of employee tracking to QA department. We’re here to give a simple solution to such a tedious task.
+- We know the importance of employee tracking to QA department. We’re here to give a simple solution to such a tedious task.
 
 ## Usage
 
