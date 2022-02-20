@@ -47,7 +47,6 @@ const updateEmployee = async (event) => {
   // ];
   // console.log(id);
 
-  const id = window.
   const first_name = document.getElementById(`firstNameInput`).value.trim();
   const last_name = document.getElementById(`lastNameInput`).value.trim();
   const employee_number = document.getElementById(`empNumberInput`).value.trim();
