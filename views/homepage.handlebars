@@ -1,3 +1,5 @@
+{{#if post.length}}
+
 <ol class="post-list">
     {{#each post as |post|}}
     <li>
@@ -5,9 +7,10 @@
     </li>
     {{/each}}
 </ol>
+{{/if}}
 
 {{#if loggedIn}}
-<comment class="media">
+<comment class="media new-post-form">
     <figure class="media-left">
         <p class="image is-128x128">
             <img id="comment-pic" src="" />
@@ -15,13 +18,16 @@
     </figure>
     <div class="media-content">
         <form class="control">
-            <textarea class="textarea" placeholder="Add a comment"></textarea>
+            <input class="textarea" name="post-text" placeholder="Add a comment"></input>
         </form>
         <nav class="level">
-            <button class="button is-info">Submit</button>
+            <button class="is-info">Submit</button>
         </nav>
     </div>
 </comment>
 {{/if}}
 
 <script src="../javascript/comment-post.js"></script>
+<script src='../javascript/add-post.js'></script>
+<script src='../javascript/delete-post.js'></script>
+<script src='../javascript/edit-post.js'></script>
