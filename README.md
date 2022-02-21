@@ -66,7 +66,7 @@ Use one of the following to login into application:
 
 ## Link to Heroku Deployed Application
 
-- lorem
+- https://mighty-reef-11767.herokuapp.com/
 
 ### Technologies Used
 
