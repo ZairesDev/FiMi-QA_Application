@@ -1,4 +1,3 @@
-//TODO: use askBCS to fix this.
 const addEmployeeFormHandler = async (event) => {
   event.preventDefault();
 
