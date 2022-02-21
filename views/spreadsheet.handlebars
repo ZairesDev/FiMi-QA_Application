@@ -1,0 +1,39 @@
+<div class='table-container is-flex is-justify-content-center is-flex-direction-column'>
+  <table class='table has-text-centered is-bordered'>
+    <thead>
+      <tr>
+        <th class='is-dark'>Num</th>
+        <th class='is-dark'>First Name</th>
+        <th class='is-dark'>Last Name</th>
+        <th class='is-dark'>Employee Number</th>
+        <th class='is-dark'>Site</th>
+        <th class='is-dark'>Role</th>
+        <th class='is-dark'>Language</th>
+        <th class='is-dark'>Group</th>
+        <th class='is-dark'>SuperVisor</th>
+        <th class='is-dark'>QA Agent</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each employees as |employee|}}
+        <tr>
+          <th>{{employee.id}}</th>
+          <th>{{employee.first_name}}</th>
+          <th>{{employee.last_name}}</th>
+          <th>{{employee.employee_number}}</th>
+          <th>{{employee.site}}</th>
+          <th>{{employee.role}}</th>
+          <th>{{employee.language}}</th>
+          <th>{{employee.group}}</th>
+          <th>{{employee.employeesuper_id}}</th>
+          <th>{{employee.qaAgent_id}}</th>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <li class='is-flex is-justify-content-center'>
+    <button id='downloadButton' class='button table-one-button is-flex is-dark'>Download</button>
+  </li>
+</div>
+
+<script src='../javascript/download.js'></script>

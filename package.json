@@ -1,0 +1,34 @@
+{
+  "name": "fimi-qa_application",
+  "version": "1.0.0",
+  "description": "## Summary",
+  "main": "server.js",
+  "scripts": {
+    "seeds": "node seeds/index.js",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiryeah/FiMi-QA_Application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiryeah/FiMi-QA_Application/issues"
+  },
+  "homepage": "https://github.com/Jiryeah/FiMi-QA_Application#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bulma": "^0.9.3",
+    "connect-session-sequelize": "^7.1.2",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.2",
+    "sequelize": "^6.16.1",
+    "sheetjs": "^2.0.0"
+  }
+}

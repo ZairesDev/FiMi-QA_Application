@@ -1,0 +1,80 @@
+{{! <form action="" class="panel sign-form is-primary has-text-centered">
+ <div class="field">
+  <h1 class="panel-heading">Login</h1>
+  <ul class="sign-form">
+    <li class="not-radio">
+
+      <label for="user">Username</label>
+      <input
+        class="input is-rounded is-primary"
+        type="text"
+        id="logUsernameInput"
+        placeholder="Username"
+      />
+    </li>
+
+    </div>
+    <div class="field">
+    <li class="not-radio">
+      <label for="password">Password</label>
+      <input
+        class="input is-rounded is-primary"
+        type="password"
+        id="logPasswordInput"
+        placeholder="Password"
+      />
+    </li>
+  </ul>
+  <button class="button sign-form is-primary mb-5" type="submit">Login</button>
+</div>
+</form> }}
+<form method="POST" class="login-form container">
+
+  <div class="field">
+    <label for="username-login" class="label">Username</label>
+    <div class="control has-icons-left has-icons-right">
+      <input
+        class="input is-success"
+        name="username"
+        id="username-login"
+        type="text"
+        placeholder="Enter Username"
+      />
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="password-login" class="label">Password</label>
+    <div class="control has-icons-left has-icons-right">
+      <input
+        class="input is-success"
+        ,
+        name="password"
+        id="password-login"
+        type="text"
+        placeholder="Enter Password"
+      />
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+      <span class="icon is-small is-right">
+        <i class="fas fa-check"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="control">
+    <button
+      class="button sign-form is-primary mb-5"
+      type="submit"
+    >Login</button>
+  </div>
+</form>
+<script src="/javascript/login.js"></script>
+{{! <script src="/public/javascript/logout.js"></script> }}

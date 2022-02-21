@@ -1,0 +1,31 @@
+.sign-up {
+    background: #fff;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+.not-radio {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    width: fit-content !important;
+}
+
+.outlier-radio {
+    position: relative;
+    bottom: .4rem;
+    left: -5%;
+}
