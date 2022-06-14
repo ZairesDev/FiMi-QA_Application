@@ -27,7 +27,7 @@ Use one of the following to login into application:
   password: rosa123,
 
 ## User Story
-
+```md
 - AS A QA Supervisor,
 - I WANT to assign Customer Care Representative (CRSs) agents and Escalated Unit (EUs) agents to Quality Assurance (QA) staff in a table format so that QA can see -who they must audit.
 - AS A QA Supervisor,
@@ -36,9 +36,9 @@ Use one of the following to login into application:
 - I WANT to view my assigned call center staff which includes their names, email, role, department, supervisor, language, and other details so that I know who to audit for the week.
 - AS A QA Supervisor,
 - I WANT the ability to export the QA assignments to an Excel spreadsheet so that I can share this report with the departments that don’t have access to the FiMI application such as the workforce department who need to be aware of assignments for scheduling.
-
+```
 ## Requirements
-
+```md
 - GIVEN a data entry and employee roster management site
 - WHEN I visit the site as a QA employee for the first time
 - THEN I am presented with the homepage, navigation links for the homepage, and the option to log in
@@ -55,7 +55,7 @@ Use one of the following to login into application:
 - WHEN I am done editing the QA Roster as a QA Supervisor I can automatically see the updated assignments
 - WHEN I am done editing the QA Roster for the week as a QA Supervisor I can choose to export the roster to an Excel spreadsheet so I can share with other departments.
 - WHEN I as a QA Supervisor or agent click on “signout” I am logged out of the application and taken back to the login page.
-
+```
 ![screenshot of edit screen](/images/editemp.jpeg)
 
 ![screenshot of full QA roster](/images/spreadsheet.jpeg)
@@ -82,6 +82,7 @@ Use one of the following to login into application:
 - Bcrypt
 - Bulma
 - Sheets.js
+- Handlebars.js
 
 ### Contributors
 
